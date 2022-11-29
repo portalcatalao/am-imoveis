@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: "Poppins", sans-serif !important;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.swiper-slide {
+  width: fit-content !important;
+}
+
+.swiper {
+  width: 100%;
+  overflow: visible !important;
+}
+
+.swiper::before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100vh;
+  top: 0;
+  left: -100vh;
+  background: #f9f9f9;
+  z-index: 9999;
+}
+
+.cardproperty .swiper-button-next, .cardproperty .swiper-button-prev {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+  font-size: 12px;
+  transition: 0.2s;
+  background-color: #f9f9f9af;
+}
+
+.cardproperty .swiper-button-next::after, .cardproperty .swiper-button-prev::after {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 0.575);
+}
+
+.cardproperty .swiper-button-next:hover::after, .cardproperty .swiper-button-prev:hover::after {
+  color: #fff;
+}
+
+.cardproperty .swiper-button-next:hover, .cardproperty .swiper-button-prev:hover {
+  background-color: #EC700F;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border: 2px solid #f1f1f1;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #222;
+}
