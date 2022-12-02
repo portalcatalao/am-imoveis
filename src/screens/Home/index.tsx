@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Container, Banner, Background, ContentBanner, Title, Subtitle, Tabs, Tab, Form, Type, ButtonScroll, Input, ButtonSubmit, BackgroundSection, ContentNews } from "./styles";
+import { Container, Banner, Background, ContentBanner, Title, Subtitle, Tabs, Tab, Form, Type, ButtonScroll, Input, ButtonSubmit, BackgroundSection, ContentNews, LinkButton } from "./styles";
 import { Card } from "../../components/Card";
 import { InputSelect } from "../../components/InputSelect";
 import { useSelect } from "../../hooks/useSelect";
@@ -86,6 +86,7 @@ export function Home() {
                             <SwiperSlide><Card /></SwiperSlide>
                         </Swiper>
                     </Section>
+                    <LinkButton href="/imoveis">Ver todos os imóveis</LinkButton>
                 </GridLayout>
             </Section>
             <Section style={{ position: 'relative' }} h={'480px'}>

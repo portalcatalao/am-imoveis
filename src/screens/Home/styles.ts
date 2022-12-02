@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Props } from "../../styles/globals";
+import Link from 'next/link';
 
 export const Container = styled.div`
 
@@ -138,4 +139,16 @@ export const BackgroundSection = styled.div`
 export const ContentNews = styled.div`
     display: flex;
     gap: 25px;
+`
+
+export const LinkButton = styled(Link)`
+    margin-top: 40px;
+    padding: 10px 15px;
+    border-radius: ${({ theme }) => theme.borders.border_p};
+    background-color: #ddd;
+
+    :hover {
+        background-color: ${({ theme }) => theme.colors.primary};
+        color: #fff;
+    }
 `

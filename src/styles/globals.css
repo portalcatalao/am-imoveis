@@ -30,7 +30,7 @@ a {
   overflow: visible !important;
 }
 
-.swiper::before {
+/* .swiper::before {
   position: absolute;
   content: '';
   height: 100%;
@@ -39,7 +39,7 @@ a {
   left: -100vh;
   background: #f9f9f9;
   z-index: 9999;
-}
+} */
 
 .cardproperty .swiper-button-next, .cardproperty .swiper-button-prev {
   width: 45px;

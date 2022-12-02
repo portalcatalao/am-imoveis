@@ -5,7 +5,7 @@ export const Container = styled(Link)`
     position: relative;
     display: flex;
 
-    width: 280px;
+    width: 300px;
     min-width: 280px;
     height: 360px;
     
