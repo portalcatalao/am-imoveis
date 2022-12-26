@@ -12,7 +12,7 @@ export const Container = styled(Link)`
     color: #fff;
 
     border: 0.5px solid #ebebeb;
-    border-radius: ${({ theme }) => theme.borders.border_p};
+    border-radius: ${({ theme }) => theme.borders.main};
     background: ${({ theme }) => theme.colors.white};
 
     img {
@@ -36,7 +36,7 @@ export const CardHeader = styled.div`
 
     width: 100%;
     padding: 20px;
-    border-radius: ${({ theme }) => theme.borders.border_p};
+    border-radius: ${({ theme }) => theme.borders.main};
 `
 
 export const Category = styled.div`
@@ -46,7 +46,7 @@ export const Category = styled.div`
     text-align: center;
 
     background-color: #262937;
-    border-radius: ${({ theme }) => theme.borders.border_p};
+    border-radius: ${({ theme }) => theme.borders.main};
 `
 
 export const TagPrice = styled.div`
@@ -59,12 +59,17 @@ export const TagPrice = styled.div`
 
 export const Thumbnail = styled.div`
     position: absolute;
+    display: flex;
 
     width: 100%;
     height: 100%;
 
     overflow: hidden;
-    border-radius: ${({ theme }) => theme.borders.border_p};
+    border-radius: ${({ theme }) => theme.borders.main};
+
+    img {
+        object-fit: cover;
+    }
 `
 
 export const Mask = styled.div`
@@ -103,9 +108,18 @@ export const Resume = styled.ul`
     font-size: 14px;
     justify-content: space-between;
 
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
     li {
         display: flex;
         gap: 8px;
         align-items: center;
+
+        :last-child {
+            font-size: 16px;
+        }
     }
 `

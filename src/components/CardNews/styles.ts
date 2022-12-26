@@ -2,16 +2,14 @@ import styled from "styled-components";
 import Link from 'next/link';
 
 export const Container = styled(Link)`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
     width: 307px;
     height: 450px;
     border: 0.5px solid #e0e0e0;
-    border-radius: ${({ theme }) => theme.borders.border_p};
-
-    :hover {
-        img {
-            transform: scale(1.1);
-        }
-    }
+    border-radius: ${({ theme }) => theme.borders.main};
 `
 
 export const CardHeader = styled.div`
@@ -22,13 +20,14 @@ export const CardHeader = styled.div`
 export const Thumbnail = styled.div`
     height: 220px;
     position: relative;
-    border-radius: ${({ theme }) => theme.borders.border_p} ${({ theme }) => theme.borders.border_p} 0 0;
+    border-radius: ${({ theme }) => theme.borders.main} ${({ theme }) => theme.borders.main} 0 0;
     overflow: hidden;
 
     img {
         transition: .2s;
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
 `
 

@@ -2,20 +2,19 @@ import Image from "next/image";
 import { Body, Container, Header, Subtitle, Thumbnail, Title } from "./styles";
 import image from "../../../public/images/banner-home.jpg";
 
-export function CardCity() {
+export function CardLocality() {
     return (
         <Container>
             <Header>
                 <Thumbnail>
-                    <Image 
+                    <Image
                         src={image}
                         alt=""
-                        layout="fill"
                     />
                 </Thumbnail>
             </Header>
             <Body>
-                <Title>Catalão</Title>
+                <Title>Nossa Senhora de Fátima</Title>
                 <Subtitle>24 Propriedades</Subtitle>
             </Body>
         </Container>

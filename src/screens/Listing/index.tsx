@@ -1,89 +1,125 @@
 import { GridLayout } from '../../styles/globals'
-import { Container, Content, Filter, Search, Tabs, Tab, Results, Properties, Top, Right, Bot, Slider, Progress, RangeInput, RangeMin, RangeMax } from './styles'
+import {
+    Container, Breadcrumb, Content, Filter, Search, Tabs, Tab, Inputs, Results, Properties,
+    Top, Right, Bot, ButtonFiltrar, Divisor, ButtonShow, MoreOptions, CheckboxGroup,
+    TestDiv, CloseFilter, ShowFilter
+} from './styles'
 
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
-import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { FiChevronRight, FiX } from "react-icons/fi";
 import { BsSearch } from 'react-icons/bs'
 
-import { Card } from '../../components/Card'
+import { CardProperty } from '../../components/CardProperty'
 import { InputSelect } from '../../components/InputSelect';
+import { InputPrice } from '../../components/InputPrice';
 import { useSelect } from '../../hooks/useSelect';
 import { useState } from 'react';
+import Link from 'next/link';
+
+import Checkbox from '../../components/Checkbox'
+import QuantitySelect from '../../components/QuantitySelect';
+import { FaFilter } from 'react-icons/fa';
 
 export default function Listing() {
+    const [open, setOpen] = useState(false);
     const [adTypeActive, setAdTypeActive] = useState(0);
-    const adType = useSelect();
+    const [showMore, setShowMore] = useState(false);
 
     return (
         <Container>
             <GridLayout>
-                <span>Home <FiChevronRight /> Listagem de Imóveis</span>
+                <ShowFilter open={open} onClick={() => setOpen(true)}>
+                    <div>
+                        <FaFilter />
+                    </div>
+                    <span>Filtrar busca</span>
+                </ShowFilter>
+
+                <Breadcrumb>
+                    <Link href="/">Home</Link>
+                    <FiChevronRight />
+                    Listagem de Imóveis
+                </Breadcrumb>
 
                 <Content>
-                    <Filter>
-                        <h3>Buscar</h3>
+                    <TestDiv open={open} />
+
+                    <Filter onSubmit={e => e.preventDefault()} open={open}>
+                        <CloseFilter>
+                            <span>Filtrar busca</span>
+                            <FiX onClick={() => setOpen(false)} />
+                        </CloseFilter>
 
                         <Search>
                             <input placeholder='Código'></input>
-                            <button><BsSearch /></button>
+                            <button type="button"><BsSearch /></button>
                         </Search>
 
-                        <h3>Filtrar</h3>
+                        <Divisor></Divisor>
                         <Tabs>
                             <Tab active={adTypeActive === 0} onClick={() => setAdTypeActive(0)}>Comprar</Tab>
                             <Tab active={adTypeActive === 1} onClick={() => setAdTypeActive(1)}>Alugar</Tab>
                         </Tabs>
 
-                        <InputSelect
-                            placeholder="Tipo de imóvel"
-                            {...adType}
-                        />
-                        <InputSelect
-                            placeholder="Localização"
-                            {...adType}
-                        />
 
-                        <InputSelect
-                            placeholder="Bairro"
-                            {...adType}
-                        />
+                        <Inputs>
+                            <InputSelect placeholder="Cidade" value={undefined} onChange={undefined} />
+                            <InputSelect placeholder="Bairro" value={undefined} onChange={undefined} />
 
-                        <div>
-                            <input placeholder='500.000'></input>
-                            até
-                            <input placeholder='4.000.000'></input>
-                        </div>
+                            <div>
+                                <InputPrice title={"Preço Min."} />
+                                <span>até</span>
+                                <InputPrice title={"Preço Máx."} />
+                            </div>
 
-                        <Slider>
-                            <Progress></Progress>
-                        </Slider>
+                            <CheckboxGroup>
+                                <Checkbox checked={false}>Apartamento</Checkbox>
+                                <Checkbox checked={false}>Casa</Checkbox>
+                                <Checkbox checked={false}>Casa de condomínio</Checkbox>
+                                <Checkbox checked={false}>Kitnet/Studio</Checkbox>
+                                <Checkbox checked={false}>Loteamento</Checkbox>
+                                <Checkbox checked={false}>Fazenda</Checkbox>
+                                <Checkbox checked={false}>Chácara</Checkbox>
+                            </CheckboxGroup>
+                        </Inputs>
 
-                        <RangeInput>
-                            <RangeMin type="range" min="0" max="40000" value="8000"></RangeMin>
-                            <RangeMax type="range" min="0" max="40000" value="30000"></RangeMax>
-                        </RangeInput>
+
+
+                        {!showMore && <ButtonShow onClick={() => setShowMore(true)}>Ver mais opções</ButtonShow>}
+                        {showMore && <ButtonShow onClick={() => setShowMore(false)}>Ver menos opções</ButtonShow>}
+                        <Divisor></Divisor>
+
+                        {showMore &&
+                            <MoreOptions>
+                                <QuantitySelect title={"Quartos"} />
+                                <QuantitySelect title={"Banheiros"} />
+                                <QuantitySelect title={"Vagas na garagem"} />
+                                <Divisor></Divisor>
+                            </MoreOptions>
+                        }
+
+                        <ButtonFiltrar type="submit">Filtrar</ButtonFiltrar>
                     </Filter>
 
                     <Results>
                         <Top>
                             <h3>202 imóveis encontrados</h3>
-
                             <Right>
-                                <p><span>Ordernar:</span> Mais recentes</p>
-                                <FiChevronDown />
+                                <span>Ordernar:</span>
+                                <InputSelect placeholder="Mais recentes" value={undefined} onChange={undefined} />
                             </Right>
                         </Top>
 
                         <Properties>
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
+                            <CardProperty />
                         </Properties>
 
                         <Bot>

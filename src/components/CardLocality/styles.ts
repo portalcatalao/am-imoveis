@@ -4,7 +4,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
     
-    border-radius: ${({theme}) => theme.borders.border_p};
+    border-radius: ${({ theme }) => theme.borders.main};
     overflow: hidden;
     
     display: flex;
@@ -24,8 +24,8 @@ export const Header = styled.div`
 `
 export const Body = styled.div`
     flex: 1;
-    background: linear-gradient(90deg, rgba(51, 51, 51, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
-    border-radius: ${({theme}) => theme.borders.border_m};
+    background: linear-gradient(rgba(31, 31, 31, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: ${({ theme }) => theme.borders.main};
     padding: 1rem;
 
     display: flex;
@@ -47,10 +47,16 @@ export const Thumbnail = styled.div`
 export const Title = styled.span`
     font-size: 1.4rem;
     font-weight: 600;
-    color: ${({theme}) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
+    margin-bottom: 15px;
+    text-align: center;
+        
+    @media (max-width: 720px) {
+        font-size: 1rem;
+    }
 `
 export const Subtitle = styled.span`
     font-size: .875rem;
     font-weight: 400;
-    color: ${({theme}) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.white};
 `

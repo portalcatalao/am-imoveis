@@ -1,4 +1,3 @@
-import { subtle } from "crypto";
 import { Container, Icon, IconWrapper, Subtitle, Title } from "./styles";
 
 interface Props {
@@ -7,7 +6,7 @@ interface Props {
     subtitle: string;
 }
 
-export function CardTypeProperty({icon, subtitle, title}: Props) {
+export function CardTypeProperty({ icon, subtitle, title }: Props) {
     return (
         <Container>
             <IconWrapper>

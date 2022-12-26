@@ -1,12 +1,14 @@
 export default {
     colors: {
-        white: '#fff',
-        dark: '#1d1d1d',
         background: '#f8f8f8',
+
         primary: '#EC700F',
         primary_dark: '#183681',
         primary_light: '#D8E3FF',
         secondary: '#262937',
+
+        white: '#fff',
+        dark: '#1d1d1d',
         blue: '#2A31D1',
         danger: '#F51739',
         success: '#27ae60',
@@ -20,8 +22,8 @@ export default {
     },
 
     borders: {
-        border_p: '6px',
-        border_m: '8px',
-        border_g: '12px',
+        main: '6px',
+        secondary: '12px',
+        third: '16px',
     }
 }

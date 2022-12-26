@@ -6,9 +6,8 @@ interface ListPros {
 
 export const Container = styled.div<ListPros>`
     display: flex;
-    flex-direction: column;
     width: 100%;
-    position: relative;
+    
     ${({ show }) => show && css`
         z-index: 999;
     `}
@@ -32,7 +31,7 @@ export const Button = styled.button<ButtonProps>`
     padding: .75rem ;
 
     font-size: .875rem;
-    font-weight: 500;
+    font-weight: 400;
     color: ${({ theme }) => theme.colors.gray_200};
 
     background: ${({ theme }) => theme.colors.white};
@@ -44,6 +43,10 @@ export const Button = styled.button<ButtonProps>`
     svg {
         font-size: 1.2rem;
         color: ${({ theme }) => theme.colors.gray_200};
+    }
+    outline: 0;
+    :focus {
+        border: .5px solid ${({ theme }) => theme.colors.primary};
     }
 `
 export const InputText = styled.input`
@@ -58,10 +61,8 @@ export const InputText = styled.input`
     font-size: .875rem;
 
     outline: 0;
-
     :focus {
-        border: .5px solid ${({ theme }) => theme.colors.gray_200};
-        outline: 0;
+        border: .5px solid ${({ theme }) => theme.colors.primary};
     }
 `
 export const List = styled.ul<ListPros>`

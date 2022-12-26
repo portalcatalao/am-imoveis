@@ -1,66 +1,59 @@
 import styled from "styled-components";
 
+interface Props {
+    open?: boolean;
+}
+
 export const Container = styled.div`
     width: 100%;
-    min-height: 100vh;
     margin-top: 72px;
-    padding: 2rem 1.5rem;
+    padding: 2rem 0;
     background-color: #fafafa;
 
-    span {
-        font-weight: 300;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    @media(max-width: 720px) {
+        padding-top: 0;
+    }
+`
+export const Breadcrumb = styled.span`
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a:hover {
+        color: ${({ theme }) => theme.colors.primary};
+    }
+`
+export const Content = styled.div`
+    width: 100%;
+    margin-top: 28px;
+    
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    width: 100%;
+    grid-gap: 20px;
+
+    @media (max-width: 1020px) {
+        grid-template-columns: 1fr;
     }
 `
 
-export const Content = styled.div`
-    display: grid;
-    width: 100%;
-    min-height: 500px;
-    margin-top: 30px;
-
-    grid-template-columns: 350px 1fr;
-    grid-gap: 20px;
-`
-
-export const Filter = styled.form`
-    background-color: #fff;
-    padding: 30px;
-    padding-bottom: 50px;
+export const Filter = styled.form<Props>`
+    background: #fff;
+    padding: 28px;
     border: 1px solid rgb(235, 235, 235);
 
-    border-radius: 6px;
+    border-radius: ${({ theme }) => theme.borders.main};
     height: fit-content;
 
     display: flex;
     flex-direction: column;
-    gap: 16px;
-
-    h3 {
-        columns: #333;
-        font-weight: 500;
-    }
-
-    button {
-        padding: 0 20px!important;
-        width: 100%!important;
-        font-weight: 400;
-        border-radius: 6px;
-    }
+    gap: 18px;
 
     input {
-        height: 45px;
-        padding-left: 20px;
-        font-size: 14px;
-        font-weight: 400;
-
-        border: 1px solid #d3d3d3;
-        border-radius: 8px;
-        
-        ::placeholder {
-            color: #333;
+        outline: 0;
+        &:focus {
+            border: 1px solid ${({ theme }) => theme.colors.primary};
         }
     }
 
@@ -69,39 +62,118 @@ export const Filter = styled.form`
         justify-content: center;
         gap: 16px;
         align-items: center;
+    }
 
-        button {
-            width: 80px;
-            padding: 8px 0;
-        }
+    @media (max-width: 1020px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
 
-        input {
+        max-width: 90%;
+        border-radius: 0;
+        border: 0;
+        height: 100vh;
 
-            width: 100%;
-        }
+        overflow: auto;
+        transition: transform 0.3s linear;
+
+        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    }
+`
+export const TestDiv = styled.div<Props>`
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    background: rgba(0,0,0,.5);
+    display: ${({ open }) => open ? 'initial' : 'none'};
+`
+
+export const ShowFilter = styled.div<Props>`
+    display: none;
+    width: 180px;
+    grid-template-columns: 45px 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 28px;
+    border-radius: ${({ theme }) => theme.borders.main};
+    background-color: #3c4056;
+    color: #fff;
+    cursor: pointer;
+
+    
+    @media(max-width: 1020px) {
+        display: grid;
+    }
+
+    div {
+        padding: 12px 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #262937;
+        border-radius: ${({ theme }) => theme.borders.main};
     }
 `
 
+
+export const Divisor = styled.div`
+    width: 100%;
+    height: 1px;
+    background: #f1f1f1;
+    margin: 12px 0;
+`
 export const Search = styled.div`
     width: 100%;
-    height: 45px;
-    margin-bottom: 20px;
+
+    h3 {
+        font-weight: 500;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    input {
+        width: 100%;
+        height: 46px;
+        padding-left: 18px;
+        font-size: 14px;
+        font-weight: 400;
+
+        border: 1px solid #d3d3d3;
+        border-radius: ${({ theme }) => theme.borders.main};
+        
+        ::placeholder {
+            color: #333;
+        }
+    }
 
     button {
         cursor: pointer;
+        width: 50px;
+        height: 46px;
 
-        padding: 10px 15px!important;
+        svg {
+            width: 18px;
+            height: 18px;
+        }
 
-        width: 48px!important;
-        height: 100%!important;
+        padding: 0 16px;
+        border-radius: ${({ theme }) => theme.borders.main};
 
-        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         border: 0;
-
-        color: #222;
-        background-color: #f8f8f8;
+        background: #f8f8f8;
         border: 1px solid rgb(235, 235, 235);
-
 
         :hover {
             background-color: ${({ theme }) => theme.colors.primary};
@@ -109,32 +181,89 @@ export const Search = styled.div`
         }
     }
 `
+export const Inputs = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    div {
+        gap: 8px;
+        justify-content: center;
+
+        span {
+            margin-top: 28px;
+        }
+    }
+`
+
+export const ButtonFiltrar = styled.button`
+    height: 46px;
+    border-radius: ${({ theme }) => theme.borders.main};
+    border: 0;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    
+    cursor: pointer;
+`
 
 export const Tabs = styled.div`
     display: flex;
     gap: 1rem;
+
+    button {
+        width: 80px;
+        padding: 8px 0;
+        padding: 0 20px!important;
+        width: 100%!important;
+        font-weight: 400;
+        border-radius: ${({ theme }) => theme.borders.main};
+    }
 `
 
 interface ITab {
     active?: boolean;
 }
 
+export const ButtonShow = styled.div<Props>`
+    margin-bottom: -20px;
+    color: ${({ theme }) => theme.colors.gray_100};
+    font-weight: 400;
+    cursor: pointer;
+
+    :hover {
+        color: ${({ theme }) => theme.colors.primary};
+    }
+`
+
+export const MoreOptions = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`
+export const CheckboxGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px!important;
+`
+
+
 export const Tab = styled.button<ITab>`
     width: 100px;
-    height: 38px;
-    padding: 8px 0;
+    height: 42px;
     border: 1px solid rgb(235, 235, 235);
-    border-radius: ${({ theme }) => theme.borders.border_p};
+    border-radius: ${({ theme }) => theme.borders.main};
     background: ${({ theme, active }) => active ? '#262937' : theme.colors.background};
+    
     :hover {
         background: ${({ theme, active }) => active ? '#262937' : theme.colors.primary};
         color: #fff;
     }
-    color: ${({ theme, active }) => active ? theme.colors.white : theme.colors.gray_200};
+    color: ${({ theme, active }) => active ? theme.colors.white : theme.colors.gray_100};
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
-
 `
 
 export const Results = styled.div`
@@ -146,37 +275,51 @@ export const Results = styled.div`
 `
 
 export const Top = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
     align-items: center;
-    justify-content: space-between;
-    font-size: 14px;
 
     width: 100%;
     background-color: #fff;
-    padding: 20px;
+    padding: 8px 12px;
     margin-bottom: 30px;
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
     border: 1px solid rgb(235, 235, 235);
+
+
+    @media (max-width: 720px) {
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+        padding: 16px;
+    }
+`
+
+export const Right = styled.span`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 16px;
+    
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 `
 
 export const Properties = styled.div`
     display: flex;
     flex-wrap: wrap;
-    row-gap: 1.5rem;
-    justify-content: space-between;
-`
+    gap: 1.2rem;
+    flex: 1;
 
-export const Right = styled.div`
-    display: flex;
-    flex-direction: row!important;
-    align-items: center;
-    gap: 6px;
-
-    p {
-        display: flex;
-        gap: 10px;
+    @media(max-width: 720px) {
+        align-items: center;
+        justify-content: center;
     }
 `
+
 
 export const Bot = styled.ul`
     width: 100%;
@@ -187,17 +330,15 @@ export const Bot = styled.ul`
     gap: 6px;
     margin-top: 30px;
 
-
     li {
         width: 45px;
         height: 45px;
-        border-radius: 50%;
+        border-radius: 30%;
         background-color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
         border: 1px solid rgb(235, 235, 235);
-    
 
         :nth-child(3) {
             background-color: #262937;
@@ -205,8 +346,7 @@ export const Bot = styled.ul`
         }
 
         :first-child, :last-child {
-            border: 1px solid #EC700F;
-            color: #EC700F;
+            background: #e8e8e8;
         }
 
         :hover {
@@ -215,45 +355,25 @@ export const Bot = styled.ul`
             color: #fff;
         }
     }
-
-    
 `
+export const CloseFilter = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between!important;
+    font-size: 18px;
+    margin-bottom: 28px;
 
-export const Slider = styled.div`
-    position: relative;
-    height: 5px;
-    background-color: #dfdfdf;
-    border-radius: 5px;
-`
+    color: ${({ theme }) => theme.colors.gray_200};
 
-export const Progress = styled.div`
-    position: absolute;
-    border-radius: 5px;
-    height: 5px;
-    background: ${({ theme }) => theme.colors.primary};
-    left: 25%;
-    right: 25%;
-`
-
-export const RangeInput  = styled.div`
-    position: relative;
-
-    input {
-        position: absolute;
-        top: -41px;
-        width: 100%;
-        -webkit-appearance: none;
-        background: none;
-        border: none;
+    svg {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+        background: #f7f7f7;
+        border-radius: ${({ theme }) => theme.borders.main};
     }
 
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: 50%;
-        height: 50px;
-        border-radius: 50%;
-        -webkit-appearance: 50%;
+    @media(min-width: 1020px) {
+        display: none!important;
     }
 `
-
-export const RangeMin = styled.input``
-export const RangeMax = styled.input``

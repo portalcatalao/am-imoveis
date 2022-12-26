@@ -8,7 +8,7 @@ export const Header = styled.div`
 export const Thumbnail = styled.div`
     width: 204px;
     height: 255px;
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
     overflow: hidden;
     position: relative;
 
@@ -33,16 +33,21 @@ export const Overlay = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
-    padding: 1rem 2rem;
+    padding: 1rem;
 `
 export const ButtonIcon = styled.button`
     background: transparent;
     border: 0;
     cursor: pointer;
+    padding: 6px;
+    background: #222;
+    border-radius: ${({ theme }) => theme.borders.main};
+    display: flex;
 
     svg {
         color: #fff;
+        width: 20px;
+        height: 18px;
     }
 `
 export const Body = styled.div`

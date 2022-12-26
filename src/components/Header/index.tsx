@@ -1,11 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Container, Navbar, Brand, Links, Button } from "./styles";
+import React, { useState } from 'react';
+
+import { Container, Navbar, Brand, Links, Button, MenuMobile, TestDiv } from "./styles";
 import logo_white from "../../../public/logo-white.svg";
 import logo from "../../../public/logo.svg";
 import { Dropdown } from "../Dropdown";
 
-export function Header({top}) {
+import { HiMenu } from 'react-icons/hi';
+import { FiX } from 'react-icons/fi'
+
+export function Header({ top }) {
+    const [open, setOpen] = useState(false);
+
     return (
         <Container>
             <Navbar top={top}>
@@ -14,8 +21,9 @@ export function Header({top}) {
                         <Image src={top ? logo_white : logo} alt={'logo'} />
                     </Link>
                 </Brand>
-                <Links>
-                    <Link href={'/'}>Home</Link>
+                {open && <TestDiv />}
+                <Links open={open}>
+                    <li><Link href={'/'}>Home</Link></li>
                     <Dropdown title={"Institucional"}>
                         <Link href="">Imóveis para alugar</Link>
                         <Link href="">Imóveis para comprar</Link>
@@ -32,9 +40,12 @@ export function Header({top}) {
                         <Link href="">Imóveis para alugar</Link>
                         <Link href="">Imóveis para comprar</Link>
                     </Dropdown>
-                    <Link href={'/'}>Contato</Link>
-                    <Button>Anunciar imóvel</Button>
+                    <li><Link href={'/'}>Contato</Link></li>
+                    <li><Button>Anunciar imóvel</Button></li>
                 </Links>
+                <MenuMobile open={open} onClick={() => setOpen(!open)}>
+                    {!open ? <HiMenu open={open} /> : <FiX />}
+                </MenuMobile>
             </Navbar>
         </Container>
     )

@@ -41,7 +41,8 @@ a {
   z-index: 9999;
 } */
 
-.cardproperty .swiper-button-next, .cardproperty .swiper-button-prev {
+.cardproperty .swiper-button-next,
+.cardproperty .swiper-button-prev {
   width: 45px;
   height: 45px;
   border-radius: 20%;
@@ -50,18 +51,34 @@ a {
   background-color: #f9f9f9af;
 }
 
-.cardproperty .swiper-button-next::after, .cardproperty .swiper-button-prev::after {
+.cardproperty .swiper-button-next::after,
+.cardproperty .swiper-button-prev::after {
   font-size: 24px;
   font-weight: 600;
   color: rgba(51, 51, 51, 0.575);
 }
 
-.cardproperty .swiper-button-next:hover::after, .cardproperty .swiper-button-prev:hover::after {
+.cardproperty .swiper-button-next:hover::after,
+.cardproperty .swiper-button-prev:hover::after {
   color: #fff;
 }
 
-.cardproperty .swiper-button-next:hover, .cardproperty .swiper-button-prev:hover {
+.cardproperty .swiper-button-next:hover,
+.cardproperty .swiper-button-prev:hover {
   background-color: #EC700F;
+}
+
+
+@media (max-width: 1020px) {
+
+  .cardproperty .swiper-button-next,
+  .cardproperty .swiper-button-prev {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* width */
@@ -72,6 +89,7 @@ a {
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+
 }
 
 /* Handle */

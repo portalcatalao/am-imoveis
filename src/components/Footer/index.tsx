@@ -12,7 +12,7 @@ export function Footer() {
                     <Row p="1rem 0">
                         <Col col={3} p={"2rem 1rem"}>
                             <Title>Sobre o site </Title>
-                            <Text>Estamos reimaginando como você compra, vende e aluga. Agora é mais fácil entrar em um lugar que você ama. Então vamos fazer isso, juntos. </Text>
+                            <Text>Estamos re-imaginando como você compra, vende e aluga. Agora é mais fácil entrar em um lugar que você ama. Então vamos fazer isso, juntos. </Text>
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
                             <Title>Links Rápidos </Title>
@@ -32,7 +32,7 @@ export function Footer() {
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
                             <div>
-                                <Col col={12} p={" 0 1rem 2rem 1rem"}>
+                                <Col col={12} p={" 0 0 2.5rem 0"}>
                                     <Title>Siga-nos </Title>
                                     <Social>
                                         <ButtonIcon>
@@ -55,7 +55,7 @@ export function Footer() {
                                         </ButtonIcon>
                                     </Social>
                                 </Col>
-                                <Col col={12} p={"1.5rem 1rem"}>
+                                <Col col={12}>
                                     <Title>Se inscrever </Title>
                                     <Form>
                                         <Input placeholder="Seu email" />

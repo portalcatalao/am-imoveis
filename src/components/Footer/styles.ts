@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
-    display: flex;
-    flex-direction: column;
     a {
         font-size: .875rem;
         color: #b5bbd6;
@@ -15,8 +13,13 @@ export const Container = styled.footer`
 `
 export const ContentPrimary = styled.div`
     width: 100%;
-    height: 376px;
     background: #2c2f3e;
+
+    @media (max-width: 720px) {
+        div {
+            min-width: 200px;
+        }
+    }
 `
 export const ContentSecondary = styled.div`
     width: 100%;
@@ -49,6 +52,7 @@ export const ButtonIcon = styled.button`
     background: transparent;
     border: 0;
     color: #b5bbd6;
+    
     cursor: pointer;
 
     svg {
@@ -65,11 +69,12 @@ export const Form = styled.form`
 export const Input = styled.input`
     width: 200px;
     height: 48px;
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
     border: 0;
     padding: .875rem;
-    background: ${({theme}) => theme.colors.secondary};
-    color: ${({theme}) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.white};
+
     :focus {
         border: 0;
         outline: 0;
@@ -83,11 +88,11 @@ export const Button = styled.button`
     align-items: center;
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
     border: 0;
     margin-left: .5rem;
-    background: ${({theme}) => theme.colors.secondary};
-    color: ${({theme}) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors.white};
     svg {
         font-size: 1.2rem;
     }

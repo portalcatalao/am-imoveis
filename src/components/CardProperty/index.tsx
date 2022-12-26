@@ -1,14 +1,14 @@
 import { Container, CardHeader, Thumbnail, CardBody, Category, Title, Address, TagPrice, Resume, Mask } from "./styles";
 import Image from 'next/image';
-import { IoLocationSharp } from 'react-icons/io5';
 
 import { FaBed, FaBath, FaCar } from 'react-icons/fa';
+import { IoBedSharp } from 'react-icons/io5'
 
-export function Card() {
+export function CardProperty() {
     return (
         <Container href={"/imoveis/teste"}>
             <Thumbnail>
-                <Image src="https://creativelayers.net/themes/findhouse-html/images/property/fp12.jpg" alt={""} layout="fill" />
+                <Image src="https://creativelayers.net/themes/findhouse-html/images/property/fp10.jpg" alt={""} layout="fill" />
                 <Mask />
             </Thumbnail>
 
@@ -26,10 +26,10 @@ export function Card() {
                 </Address>
 
                 <Resume>
-                    <li><FaBed /> 4</li>
-                    <li><FaBath /> 2</li>
-                    <li><FaCar /> 2</li>
-                    <li>100 m²</li>
+                    <li><IoBedSharp />4</li>
+                    <li><FaBath />2</li>
+                    <li><FaCar />2</li>
+                    <li>138 m²</li>
                 </Resume>
             </CardBody>
         </Container>
