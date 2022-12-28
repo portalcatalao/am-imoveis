@@ -1,4 +1,4 @@
-import { Container, Icon, IconWrapper, Subtitle, Title } from "./styles";
+import { Container, Icon, IconWrapper, Text, Subtitle, Title } from "./styles";
 
 interface Props {
     icon: string;
@@ -14,8 +14,10 @@ export function CardTypeProperty({ icon, subtitle, title }: Props) {
                     name={icon}
                 />
             </IconWrapper>
-            <Title>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
+            <Text>
+                <Title>{title}</Title>
+                <Subtitle>{subtitle}</Subtitle>
+            </Text>
         </Container>
     )
 }

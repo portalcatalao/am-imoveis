@@ -6,10 +6,20 @@ export const Container = styled(Link)`
     display: flex;
     flex-direction: column;
 
-    width: 307px;
-    height: 450px;
+    max-width: 307px;
+    height: 380px;
     border: 0.5px solid #e0e0e0;
     border-radius: ${({ theme }) => theme.borders.main};
+
+    img {
+        transition: transform .2s;
+    }
+
+    :hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
 `
 
 export const CardHeader = styled.div`
@@ -18,9 +28,11 @@ export const CardHeader = styled.div`
 `
 
 export const Thumbnail = styled.div`
-    height: 220px;
-    position: relative;
-    border-radius: ${({ theme }) => theme.borders.main} ${({ theme }) => theme.borders.main} 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: ${({ theme }) => theme.borders.main};
+    position: absolute;
+    z-index: -10;
     overflow: hidden;
 
     img {
@@ -30,17 +42,25 @@ export const Thumbnail = styled.div`
         object-fit: cover;
     }
 `
-
+export const Mask = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 0) 25%, rgba(38, 38, 38, 0.8) 80%, rgba(38, 38, 38, 0.9) 100%);
+`
 export const CardBody = styled.div`
     width: 100%;
     padding: 10px 20px;
+    position: relative;
+    top: 48%;
+    color: #fafafa;
 `
 
 export const SubTitle = styled.h4`
     margin-bottom: 5px;
     font-size: 14px;
     font-weight: 400;
-    color: ${({ theme }) => theme.colors.primary};
+    color: gold;
 `
 
 export const Title = styled.h1`

@@ -28,12 +28,12 @@ export const DropdownButton = styled.button`
 export const DropdowBody = styled.span`
     position: absolute;
     z-index: 999;
-
     display: flex;
     flex-direction: column;
     width: fit-content;
+    
+    padding: 0.5rem;
 
-    padding: 1rem;
     background: #fff;
     border: .5px solid #d3d3d3;
     border-radius: ${({ theme }) => theme.borders.main};
@@ -45,7 +45,7 @@ export const DropdowBody = styled.span`
         display: flex;
         align-items: center;
 
-        font-size: .875rem;
+        font-size: .875rem!important;
         font-weight: 400;
         color: ${({ theme }) => theme.colors.gray_200};
 

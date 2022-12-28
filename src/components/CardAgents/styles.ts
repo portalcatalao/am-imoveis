@@ -39,8 +39,6 @@ export const ButtonIcon = styled.button`
     background: transparent;
     border: 0;
     cursor: pointer;
-    padding: 6px;
-    background: #222;
     border-radius: ${({ theme }) => theme.borders.main};
     display: flex;
 

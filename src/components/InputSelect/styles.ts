@@ -23,7 +23,7 @@ interface ButtonProps {
     active?: boolean;
 }
 export const Button = styled.button<ButtonProps>`
-    height: 48px;
+    height: 46px;
     width: 100%;
 
     border-radius: 8px;
@@ -46,11 +46,11 @@ export const Button = styled.button<ButtonProps>`
     }
     outline: 0;
     :focus {
-        border: .5px solid ${({ theme }) => theme.colors.primary};
+        border: 1px solid ${({ theme }) => theme.colors.primary};
     }
 `
 export const InputText = styled.input`
-    height: 48px;
+    height: 46px;
     width: 100%;
 
     border-radius: 8px;

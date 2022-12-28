@@ -3,13 +3,15 @@ import Link from 'next/link';
 
 import { Props } from "../../styles/globals";
 
-export const Container = styled.div`
-`
 export const Banner = styled.div`
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: #090d1ec9;
+    background: #090d1e99;
+    
+    @media(max-width: 720px) {
+        height: 93vh;
+    }
 `
 export const Background = styled.div`
     position: absolute;
@@ -20,7 +22,6 @@ export const Background = styled.div`
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 `
 export const ContentBanner = styled.div`
@@ -31,6 +32,15 @@ export const ContentBanner = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    img {
+        width: 120px;
+        height: 85px;
+        position: absolute;
+        bottom: 26px;
+        left: 26px;
+        border-radius: 8px;
+    }
 
     @media (max-width: 1020px) {
         padding: 15px;
@@ -43,7 +53,7 @@ export const TitleMain = styled.h1`
     color: #fff;
 
     @media (max-width: 720px) {
-        font-size: 38px;
+        font-size: 28px;
     }
 `
 export const Title = styled.h1<Props>`
@@ -62,12 +72,12 @@ export const Subtitle = styled.p<Props>`
     /* font-family: 'Nunito', sans-serif !important; */
     font-size: ${({ fz }) => fz ?? "1.2rem"};
     color: ${({ cl }) => cl ?? '#ffffff'};
-    margin-bottom: 3rem;
+    text-align: ${({ ai }) => ai ?? 'left'};
+    margin-bottom: 2rem;
 
     @media (max-width: 720px) {
         padding: 10px;
         font-size: 18px;
-        text-align: center;
     }
 `
 export const Tabs = styled.div`
@@ -199,23 +209,51 @@ export const BackgroundSection = styled.div`
         opacity: .5;
     }
 `
-export const LinkButton = styled(Link)`
-    margin-top: 40px;
-    padding: 10px 15px;
-    border-radius: ${({ theme }) => theme.borders.main};
-    background-color: #ddd;
+export const TopCard = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 
-    :hover {
-        background-color: ${({ theme }) => theme.colors.primary};
-        color: #fff;
+    div {
+        h1 {
+            text-align: left;
+        }
+    }
+    
+    a {
+        display: block;
+    }
+
+    @media(max-width: 720px) {
+        a {
+            display: none;
+        }
     }
 `
+export const LinkButton = styled(Link)`
+    font-weight: 500;
+    color: ${({ theme }) => theme.colors.gray_100};
+    display: block;
+    padding: 12px 18px!important;
+    border-radius: ${({ theme }) => theme.borders.main};
+    margin: 0 auto;
+    margin-top: 28px;
+    background: #e8e8e8;
 
+    :hover {
+        color: ${({ theme }) => theme.colors.white};
+        background-color: ${({ theme }) => theme.colors.primary};
+    }
+`
 export const TypePropertyContent = styled.div`
     background-color: #fff;
-    border-radius: ${({ theme }) => theme.borders.main};
+    border-radius: ${({ theme }) => theme.borders.third};
     display: flex;
-
+    justify-content: center;
+    padding: 0 12px;
+    
     div {
         display: flex;
     }
@@ -227,3 +265,4 @@ export const TypePropertyContent = styled.div`
         }
     }
 `
+

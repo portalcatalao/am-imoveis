@@ -4,24 +4,24 @@ import Link from 'next/link';
 export const Container = styled(Link)`
     position: relative;
     display: flex;
-
-    width: 300px;
+    max-width: 460px;
     min-width: 280px;
+    flex-flow: wrap;
     height: 360px;
-    
     color: #fff;
-
     border: 0.5px solid #ebebeb;
     border-radius: ${({ theme }) => theme.borders.main};
     background: ${({ theme }) => theme.colors.white};
-
+    flex-grow: 1;     
+    flex-shrink: 1; 
+    
     img {
-        transition: transform .2s
+        transition: transform .3s
     }
 
     :hover {
         img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
     }
 `
@@ -78,7 +78,7 @@ export const Mask = styled.div`
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(180deg, rgba(38, 41, 55, 0) 0%, rgba(38, 41, 55, 0) 45%, rgba(38, 41, 55, 0.8) 80%, rgba(38, 41, 55, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 0) 45%, rgba(38, 38, 38, 0.8) 80%, rgba(38, 38, 38, 0.9) 100%);
 `
 
 export const CardBody = styled.div`
@@ -102,7 +102,7 @@ export const Address = styled.div`
 
 export const Resume = styled.ul`
     margin-top: 10px;
-    width: 100%;
+    max-width: 260px;
     display: flex;
     list-style-type: none;
     font-size: 14px;

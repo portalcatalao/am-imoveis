@@ -8,37 +8,40 @@ export const Container = styled.div`
 `
 export const Span = styled.span`
     position: absolute;
-    bottom: .75rem;
+    bottom: .70rem;
     left: .75rem;
 `
 export const InputContent = styled.div`
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 46px;
 
     span {
-        color: ${({theme})=>theme.colors.gray_200}
+        color: ${({ theme }) => theme.colors.gray_200}
     }
 `
 export const Label = styled.label`
     font-size: .875rem;
     font-weight: 500;
-    color: ${({theme}) => theme.colors.gray_200};
+    color: ${({ theme }) => theme.colors.gray_200};
+    margin-bottom: -8px;
 `
 export const InputText = styled.input`
-    height: 48px;
+    height: 46px;
     width: 100%;
     text-align: right;
 
-
-    border-radius: 8px;
     border: 1px solid #d3d3d3;
-    padding: .75rem ;
+    border-radius: 8px;
+    padding: .75rem;
     padding-left: 2.2rem;
 
     font-size: .875rem;
     outline: 0;
 
     &:focus {
-        border: 1px solid ${({theme}) => theme.colors.primary};
+        border: 1px solid ${({ theme }) => theme.colors.primary};
     }
 `
 export const Subtitle = styled.p`

@@ -70,7 +70,7 @@ export const Links = styled.ul<Props>`
         width: 100%;
         display: flex;
         font-size: 1rem;
-        padding: 8px;
+        padding: 8px 12px;
     }
 
     @media (max-width: 1020px) {
@@ -82,7 +82,7 @@ export const Links = styled.ul<Props>`
         width: 280px;
 
         color: #333;
-        background-color: #f1f1f1;
+        background-color: #f7f7f7;
         flex-flow: column nowrap;
         align-items: flex-start;
 
@@ -95,8 +95,8 @@ export const Links = styled.ul<Props>`
         transition: transform 0.3s linear;
 
         a {
-            font-weight: 500;
-            background-color: #ebebeb;
+            font-weight: 400;
+            background-color: #f1f1f1;
             border-radius: ${({ theme }) => theme.borders.main};
         }
 
@@ -105,7 +105,8 @@ export const Links = styled.ul<Props>`
 
             button {
                 width: 100%;
-                background-color: #ebebeb;
+                font-weight: 400;
+                background-color: #f1f1f1;
                 padding: 12px;
                 border-radius: ${({ theme }) => theme.borders.main};
             }

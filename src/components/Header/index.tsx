@@ -2,13 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from 'react';
 
-import { Container, Navbar, Brand, Links, Button, MenuMobile, TestDiv } from "./styles";
 import logo_white from "../../../public/logo-white.svg";
 import logo from "../../../public/logo.svg";
 import { Dropdown } from "../Dropdown";
 
 import { HiMenu } from 'react-icons/hi';
 import { FiX } from 'react-icons/fi'
+
+import { Container, Navbar, Brand, Links, Button, MenuMobile, TestDiv } from "./styles";
 
 export function Header({ top }) {
     const [open, setOpen] = useState(false);
@@ -43,8 +44,8 @@ export function Header({ top }) {
                     <li><Link href={'/'}>Contato</Link></li>
                     <li><Button>Anunciar imóvel</Button></li>
                 </Links>
-                <MenuMobile open={open} onClick={() => setOpen(!open)}>
-                    {!open ? <HiMenu open={open} /> : <FiX />}
+                <MenuMobile onClick={() => setOpen(!open)}>
+                    {!open ? <HiMenu /> : <FiX />}
                 </MenuMobile>
             </Navbar>
         </Container>

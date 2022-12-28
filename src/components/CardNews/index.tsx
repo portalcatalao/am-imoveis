@@ -1,4 +1,4 @@
-import { Container, CardHeader, Thumbnail, Title, CardBody, SubTitle, Description } from "./styles";
+import { Container, CardHeader, Thumbnail, Title, CardBody, SubTitle, Description, Mask } from "./styles";
 import Image from 'next/image'
 
 export function CardNews() {
@@ -6,11 +6,11 @@ export function CardNews() {
         <Container href={"/"}>
             <CardHeader>
                 <Thumbnail>
-                    <Image src="https://creativelayers.net/themes/findhouse-html/images/blog/bh3.jpg" alt="ok" layout="fill" />
+                    <Image src="https://creativelayers.net/themes/findhouse-html/images/property/fp22.jpg" alt="ok" layout="fill" />
+                    <Mask />
                 </Thumbnail>
             </CardHeader>
             <CardBody>
-                <SubTitle>Oportunidade</SubTitle>
                 <Title>Residencial Torres do Lago</Title>
                 <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in lectus venenatis, convallis lacus et, placerat nunc.</Description>
             </CardBody>
