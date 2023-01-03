@@ -18,7 +18,6 @@ function Checkbox({ children, ...props }: Props) {
             checked={checked}
             onClick={handleCheckboxChange}
         >
-
             <StyledCheckbox checked={checked}>
                 <BsCheckLg />
             </StyledCheckbox>

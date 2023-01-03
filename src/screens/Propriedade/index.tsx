@@ -5,11 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from "swiper";
 
 import { FaBath, FaCar } from 'react-icons/fa';
-import { FaCalendarAlt } from 'react-icons/fa';
 import { IoBedSharp } from 'react-icons/io5'
 import { HiShare } from 'react-icons/hi'
 import { BsCheckLg } from 'react-icons/bs'
-import { IoLogoWhatsapp } from 'react-icons/io'
 import { CardProperty } from "../../components/CardProperty";
 import Link from "next/link";
 
@@ -19,7 +17,7 @@ import {
     ContactAgent, TextAgent, SendMessage, TitleRelacionados
 } from "./styles";
 
-export function Property() {
+export default function Property() {
     return (
         <Container>
             <GridLayout p="0" ai="center">
@@ -163,8 +161,8 @@ export function Property() {
                             <Divisor></Divisor>
 
                             <SendMessage>
-                                <Link href="#">Entrar em contato<IoLogoWhatsapp /></Link>
-                                <Link href="#">Agendar visita<FaCalendarAlt /></Link>
+                                <Link href="#">Entrar em contato</Link>
+                                <Link href="#">Agendar visita</Link>
                             </SendMessage>
                         </Contact>
                     </Description>
@@ -185,12 +183,97 @@ export function Property() {
                             padding: "0 10px"
                         }}
                     >
-                        <SwiperSlide><CardProperty /></SwiperSlide>
-                        <SwiperSlide><CardProperty /></SwiperSlide>
-                        <SwiperSlide><CardProperty /></SwiperSlide>
-                        <SwiperSlide><CardProperty /></SwiperSlide>
-                        <SwiperSlide><CardProperty /></SwiperSlide>
-                        <SwiperSlide><CardProperty /></SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
+                                forSell={true}
+                                price="570.000,00"
+                                title="Nossa Senhora de Fátima"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221230090034_52430.jpg"
+                                forSell={true}
+                                price="570.000,00"
+                                title="Ipanema"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221221152839_04820.jpg"
+                                forRent={true}
+                                price="570.000,00"
+                                title="Jardim Florença"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
+                                forSell={true}
+                                price="570.000,00"
+                                title="Nossa Senhora de Fátima"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221230090034_52430.jpg"
+                                forSell={true}
+                                price="570.000,00"
+                                title="Ipanema"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221221152839_04820.jpg"
+                                forRent={true}
+                                price="570.000,00"
+                                title="Jardim Florença"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <CardProperty
+                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
+                                forSell={true}
+                                price="570.000,00"
+                                title="Nossa Senhora de Fátima"
+                                city="Catalão"
+                                bed="3"
+                                bath="2"
+                                car="2"
+                                area="138"
+                            />
+                        </SwiperSlide>
                     </Swiper>
                 </GridLayout>
             </Section>

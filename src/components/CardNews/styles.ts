@@ -6,27 +6,15 @@ export const Container = styled(Link)`
     display: flex;
     flex-direction: column;
 
-    max-width: 307px;
+    width: 316px;
     height: 380px;
     border: 0.5px solid #e0e0e0;
     border-radius: ${({ theme }) => theme.borders.main};
-
-    img {
-        transition: transform .2s;
-    }
-
-    :hover {
-        img {
-            transform: scale(1.1);
-        }
-    }
 `
-
 export const CardHeader = styled.div`
     width: 100%;
     margin-bottom: 10px;
 `
-
 export const Thumbnail = styled.div`
     width: 100%;
     height: 100%;
@@ -52,7 +40,7 @@ export const CardBody = styled.div`
     width: 100%;
     padding: 10px 20px;
     position: relative;
-    top: 48%;
+    top: 50%;
     color: #fafafa;
 `
 
@@ -62,17 +50,15 @@ export const SubTitle = styled.h4`
     font-weight: 400;
     color: gold;
 `
-
 export const Title = styled.h1`
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 10px;
     display: -webkit-box;
     overflow: hidden;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 `
-
 export const Description = styled.p`
     font-size: 16px;
     display: -webkit-box;

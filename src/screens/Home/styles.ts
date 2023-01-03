@@ -39,11 +39,16 @@ export const ContentBanner = styled.div`
         position: absolute;
         bottom: 26px;
         left: 26px;
-        border-radius: 8px;
+        border-radius: ${({ theme }) => theme.borders.main};
     }
 
     @media (max-width: 1020px) {
-        padding: 15px;
+        padding: 10px;
+
+        img {
+            width: 80px;
+            height: 60px;
+        }
     }
 `
 export const TitleMain = styled.h1`
@@ -90,7 +95,7 @@ interface ITab {
 }
 export const Tab = styled.button<ITab>`
     width: 100px;
-    height: 48px;
+    height: 42px;
 
     border: 0;
     border-radius: ${({ theme }) => theme.borders.main};
@@ -210,46 +215,52 @@ export const BackgroundSection = styled.div`
     }
 `
 export const TopCard = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
     position: relative;
+    width: 100%;
+
+    h1 {
+        text-align: left;
+    }
 
     div {
-        h1 {
-            text-align: left;
-        }
-    }
-    
-    a {
-        display: block;
+        width: 100%;
     }
 
-    @media(max-width: 720px) {
-        a {
-            display: none;
+    div p {
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+
+        @media(max-width: 660px) {
+            flex-direction: column;
         }
-    }
+    }   
 `
 export const LinkButton = styled(Link)`
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: ${({ theme }) => theme.colors.gray_100};
-    display: block;
-    padding: 12px 18px!important;
-    border-radius: ${({ theme }) => theme.borders.main};
-    margin: 0 auto;
-    margin-top: 28px;
-    background: #e8e8e8;
+    font-weight: 500;
+    
+
+    @media(max-width: 660px) {
+        width: 100%;
+        justify-content: start;
+    }
+    
+    svg {
+        width: 22px;
+        height: 22px;
+    }
 
     :hover {
-        color: ${({ theme }) => theme.colors.white};
-        background-color: ${({ theme }) => theme.colors.primary};
+        color: ${({ theme }) => theme.colors.primary};
     }
 `
 export const TypePropertyContent = styled.div`
     background-color: #fff;
-    border-radius: ${({ theme }) => theme.borders.third};
+    border-radius: ${({ theme }) => theme.borders.secondary};
     display: flex;
     justify-content: center;
     padding: 0 12px;
@@ -259,6 +270,7 @@ export const TypePropertyContent = styled.div`
     }
 
     @media (max-width: 720px) {
+        padding: 0 12px 28px 12px;
         div {
             display: flex;
             flex-direction: column;

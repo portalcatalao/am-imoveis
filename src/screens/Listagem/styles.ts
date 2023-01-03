@@ -11,10 +11,10 @@ export const Container = styled.div`
     }
 `
 export const Breadcrumb = styled.span`
-    font-weight: 300;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    color: ${({ theme }) => theme.colors.gray_200};
 
     a:hover {
         color: ${({ theme }) => theme.colors.primary};
@@ -114,7 +114,7 @@ export const Bot = styled.ul`
         align-items: center;
         justify-content: center;
 
-        border-radius: 28%;
+        border-radius: ${({ theme }) => theme.borders.main};
         border: 1px solid rgb(235, 235, 235);
 
         :nth-child(3) {

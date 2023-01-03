@@ -13,7 +13,7 @@ export const Container = styled.header`
     width: 100%;
     height: 72px;
 `
-export const TestDiv = styled.div`
+export const Mask = styled.div`
     width: 100vw;
     height: 100vh;
     position: fixed;

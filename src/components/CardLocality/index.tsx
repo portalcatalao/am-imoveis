@@ -1,26 +1,27 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Body, Container, Header, Subtitle, Thumbnail, Title } from "./styles";
-import image from "../../../public/images/banner-home1.jpg";
-
 
 interface Props {
-    Title1?: string;
+    title?: string,
+    src?: string | StaticImageData,
+    alt?: string,
+    subtitle?: string;
 }
 
-export function CardLocality({ Title1 }: Props) {
+export function CardLocality({ title, src, alt, subtitle, ...props }: Props) {
     return (
         <Container>
             <Header>
                 <Thumbnail>
                     <Image
-                        src={image}
-                        alt=""
+                        src={src}
+                        alt={alt}
                     />
                 </Thumbnail>
             </Header>
             <Body>
-                <Title>{Title1}</Title>
-                <Subtitle>24 Propriedades</Subtitle>
+                <Title>{title}</Title>
+                <Subtitle>{subtitle}</Subtitle>
             </Body>
         </Container>
     )

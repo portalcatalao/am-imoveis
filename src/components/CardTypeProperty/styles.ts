@@ -34,7 +34,7 @@ export const IconWrapper = styled.div<Icon>`
     justify-content: center;
 
     background: ${({ theme }) => theme.colors.secondary};
-    border-radius: 30%;
+    border-radius: ${({ theme }) => theme.borders.secondary};
     transition: .3s;
 
     margin-bottom: 1.4rem;

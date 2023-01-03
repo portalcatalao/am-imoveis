@@ -250,6 +250,11 @@
   dependencies:
     "swiper" "*"
 
+"@types/vanilla-masker@^1.2.1":
+  "integrity" "sha512-b5ajZhEff5Ymf0znJ6ReHd4RIzZxb8QORD52/gC9qiG1wgBG+uraJbOgIXIyn4/OLOko/bmDajXuxn2WnYD3ew=="
+  "resolved" "https://registry.npmjs.org/@types/vanilla-masker/-/vanilla-masker-1.2.1.tgz"
+  "version" "1.2.1"
+
 "ansi-styles@^3.2.1":
   "integrity" "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA=="
   "resolved" "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz"
@@ -609,7 +614,12 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
-"react@*", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
+"react-notifications-component@^4.0.1":
+  "integrity" "sha512-NRBkWO19AsXmN0b8YQ0L12eoCAhrnmIZtGm77ATWSfQEXPL5PYSyeACpx7tePP+R2De9b0IP4yk9vY4TtzC02w=="
+  "resolved" "https://registry.npmjs.org/react-notifications-component/-/react-notifications-component-4.0.1.tgz"
+  "version" "4.0.1"
+
+"react@*", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.1", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -717,4 +727,9 @@
 "use-sync-external-store@1.2.0":
   "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
   "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
+  "version" "1.2.0"
+
+"vanilla-masker@^1.2.0":
+  "integrity" "sha512-5SQeksiWaRYfbTaLVcqDPlvINGRt7ODbmWqqMMdT4GuZEC01KJm7FxaytscI5GZ9mlkTNQDwqllSHbv1ENxQEA=="
+  "resolved" "https://registry.npmjs.org/vanilla-masker/-/vanilla-masker-1.2.0.tgz"
   "version" "1.2.0"

@@ -1,18 +1,24 @@
 import { Container, CardHeader, Thumbnail, Title, CardBody, SubTitle, Description, Mask } from "./styles";
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
-export function CardNews() {
+interface Props {
+    src?: string | StaticImageData,
+    title?: string,
+    description?: string
+}
+
+export function CardNews({ src, title, description }: Props) {
     return (
         <Container href={"/"}>
             <CardHeader>
                 <Thumbnail>
-                    <Image src="https://creativelayers.net/themes/findhouse-html/images/property/fp22.jpg" alt="ok" layout="fill" />
+                    <Image src={src} alt="" layout="fill" />
                     <Mask />
                 </Thumbnail>
             </CardHeader>
             <CardBody>
-                <Title>Residencial Torres do Lago</Title>
-                <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in lectus venenatis, convallis lacus et, placerat nunc.</Description>
+                <Title>{title}</Title>
+                <Description>{description}</Description>
             </CardBody>
         </Container>
     )

@@ -74,7 +74,7 @@ export function useForm(type?: string): useFormProps {
 
     function onChange({ target }) {
         if (error) validate(target.value);
-        {error && setError(null)}
+        { error && setError(null) }
         if (types[type] && types[type].mask) {
             setValue(types[type].mask(target.value));
         } else {

@@ -9,7 +9,7 @@ import { Dropdown } from "../Dropdown";
 import { HiMenu } from 'react-icons/hi';
 import { FiX } from 'react-icons/fi'
 
-import { Container, Navbar, Brand, Links, Button, MenuMobile, TestDiv } from "./styles";
+import { Container, Navbar, Brand, Links, Button, MenuMobile, Mask } from "./styles";
 
 export function Header({ top }) {
     const [open, setOpen] = useState(false);
@@ -22,26 +22,13 @@ export function Header({ top }) {
                         <Image src={top ? logo_white : logo} alt={'logo'} />
                     </Link>
                 </Brand>
-                {open && <TestDiv />}
+                {open && <Mask />}
                 <Links open={open}>
                     <li><Link href={'/'}>Home</Link></li>
-                    <Dropdown title={"Institucional"}>
-                        <Link href="">Imóveis para alugar</Link>
-                        <Link href="">Imóveis para comprar</Link>
-                    </Dropdown>
-                    <Dropdown title={"Serviços"}>
-                        <Link href="">Imóveis para alugar</Link>
-                        <Link href="">Imóveis para comprar</Link>
-                    </Dropdown>
-                    <Dropdown title={"Venda"}>
-                        <Link href="">Imóveis para alugar</Link>
-                        <Link href="">Imóveis para comprar</Link>
-                    </Dropdown>
-                    <Dropdown title={"Aluguel"}>
-                        <Link href="">Imóveis para alugar</Link>
-                        <Link href="">Imóveis para comprar</Link>
-                    </Dropdown>
-                    <li><Link href={'/'}>Contato</Link></li>
+                    <li><Link href={'/institucional'}>Institucional</Link></li>
+                    <li><Link href={'/imoveis'}>Imóveis</Link></li>
+                    <li><Link href={'/servicos'}>Serviços</Link></li>
+                    <li><Link href={'/contato'}>Contato</Link></li>
                     <li><Button>Anunciar imóvel</Button></li>
                 </Links>
                 <MenuMobile onClick={() => setOpen(!open)}>

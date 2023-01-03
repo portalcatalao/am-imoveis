@@ -6,8 +6,8 @@ export const Header = styled.div`
     margin-bottom: 1rem;
 `
 export const Thumbnail = styled.div`
-    width: 204px;
-    height: 255px;
+    width: 248px;
+    height: 280px;
     border-radius: ${({ theme }) => theme.borders.main};
     overflow: hidden;
     position: relative;
@@ -31,9 +31,10 @@ export const Overlay = styled.div`
     transition: .3s;
 
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
+    justify-content: center;
     padding: 1rem;
+    gap: 30px;
 `
 export const ButtonIcon = styled.button`
     background: transparent;

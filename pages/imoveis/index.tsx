@@ -1,7 +1,7 @@
-import Listing from '../../src/screens/Listing'
+import Listing from '../../src/screens/Listagem'
 
 export default function ListingPage() {
-    return(
+    return (
         <Listing />
     )
 }

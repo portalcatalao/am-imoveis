@@ -34,7 +34,7 @@ export function Filter() {
                 <CloseFilter>
                     <span>Filtrar busca</span>
                     <div onClick={() => setOpen(false)}>
-                        Fechar <FiX />
+                        <FiX />
                     </div>
                 </CloseFilter>
 

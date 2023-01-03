@@ -1,31 +1,59 @@
-import Image from "next/image";
-import { Body, ButtonIcon, Container, Footer, Header, Overlay, Stars, Subtitle, Thumbnail, Title } from "./styles";
-import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import Image, { StaticImageData } from "next/image";
+import { Body, ButtonIcon, Container, Footer, Header, Overlay, Subtitle, Thumbnail, Title } from "./styles";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
-export function CardAgents() {
+interface Props {
+    src?: string | StaticImageData,
+    whatsapp?: string,
+    instagram?: string,
+    facebook?: string,
+    youtube?: string,
+    title?: string,
+    subtitle?: string,
+}
+
+export function CardAgents({ src, whatsapp, facebook, instagram, youtube, title, subtitle }: Props) {
     return (
         <Container>
             <Header>
                 <Thumbnail>
                     <Image
-                        src={"https://creativelayers.net/themes/findhouse-html/images/team/10.jpg"}
+                        src={src}
                         alt=""
-                        width={204}
-                        height={255}
+                        layout="fill"
                     />
                     <Overlay>
-                        <ButtonIcon><FaWhatsapp /></ButtonIcon>
-                        <ButtonIcon><FaFacebookF /></ButtonIcon>
-                        <ButtonIcon><FaInstagram /></ButtonIcon>
-                        <ButtonIcon><FaYoutube /></ButtonIcon>
+                        {whatsapp && <ButtonIcon>
+                            <Link href={whatsapp}>
+                                <FaWhatsapp />
+                            </Link>
+                        </ButtonIcon>
+                        }
+                        {facebook && <ButtonIcon>
+                            <Link href={facebook}>
+                                <FaFacebookF />
+                            </Link>
+                        </ButtonIcon>}
+                        {instagram && <ButtonIcon>
+                            <Link href={instagram}>
+                                <FaInstagram />
+                            </Link>
+                        </ButtonIcon>
+                        }
+                        {youtube && <ButtonIcon>
+                            <Link href={youtube}>
+                                <FaYoutube />
+                            </Link>
+                        </ButtonIcon>}
                     </Overlay>
                 </Thumbnail>
             </Header>
             <Body>
-                <Title>Ronaldo Peres</Title>
+                <Title>{title}</Title>
             </Body>
             <Footer>
-                <Subtitle>Especialista em vendas</Subtitle>
+                <Subtitle>{subtitle}</Subtitle>
             </Footer>
         </Container>
     )

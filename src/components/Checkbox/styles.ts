@@ -6,8 +6,8 @@ interface Props {
 
 export const CheckboxContainer = styled.div<Props>`
     height: 42px;
-    padding: 12px 8px!important;
-    border-radius: 5px;
+    padding: 8px!important;
+    border-radius: ${({ theme }) => theme.borders.main};
 
     width: 100%;
     align-items: center;
@@ -32,7 +32,7 @@ export const StyledCheckbox = styled.label<Props>`
     cursor: pointer!important;
     width: 26px;
     height: 26px;
-    border-radius: 6px;
+    border-radius: ${({ theme }) => theme.borders.main};
     background: ${props => props.checked ? ({ theme }) => theme.colors.primary : "#fff"};
     svg {
         color: ${props => props.checked ? '#fafafa' : "#333"};

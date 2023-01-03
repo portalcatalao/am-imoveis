@@ -22,7 +22,7 @@ export default {
     },
 
     borders: {
-        main: '6px',
+        main: '3px',
         secondary: '12px',
         third: '16px',
     }

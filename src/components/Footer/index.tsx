@@ -11,52 +11,39 @@ export function Footer() {
                 <GridLayout>
                     <Row p="1rem 0">
                         <Col col={3} p={"2rem 1rem"}>
-                            <Title>Sobre o site </Title>
-                            <Text>Estamos re-imaginando como você compra, vende e aluga. Agora é mais fácil entrar em um lugar que você ama. Então vamos fazer isso, juntos. </Text>
+                            <Title>Sobre</Title>
+                            <Text>
+                                Estamos re-imaginando como você compra, vende e aluga.
+                                Agora é mais fácil entrar em um lugar que você ama, estamos aqui para te ajudar!
+                            </Text>
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
-                            <Title>Links Rápidos </Title>
-                            <Link href={'/'}>Sobre nós </Link>
-                            <Link href={'/'}>Termos e Condições </Link>
-                            <Link href={'/'}>Guia do usuário </Link>
-                            <Link href={'/'}>Centro de Apoio </Link>
-                            <Link href={'/'}>Informações de Imprensa </Link>
+                            <Title>Acesso rápido</Title>
+                            <Link href={'/'}>Sobre nós</Link>
+                            <Link href={'/'}>Serviços que oferecemos</Link>
+                            <Link href={'/'}>Imóveis disponíveis</Link>
+                            <Link href={'/'}>Entre em contato</Link>
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
-                            <Title>Contate-nos </Title>
-                            <Link href={'/'}>info@findhouse.com </Link>
-                            <Link href={'/'}>Collins Street West, Victoria </Link>
-                            <Link href={'/'}>8007, Austrália. </Link>
-                            <Link href={'/'}>+1 246-345-0699 </Link>
-                            <Link href={'/'}>+1 246-345-0695 </Link>
+                            <Title>Contate-nos</Title>
+                            <Link href={'/'}>contato@amimoveis.com.br</Link>
+                            <Link href={'/'}>Av. Vinte de Agosto, 1062</Link>
+                            <Link href={'/'}>Centro, Catalão - GO</Link>
+                            <Link href={'/'}>(64) 3442-5200 </Link>
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
                             <div>
                                 <Col col={12} p={" 0 0 2.5rem 0"}>
-                                    <Title>Siga-nos </Title>
+                                    <Title>Siga-nos</Title>
                                     <Social>
-                                        <ButtonIcon>
-                                            <FaWhatsapp />
-                                        </ButtonIcon>
-                                        <ButtonIcon>
-                                            <FaFacebookF />
-                                        </ButtonIcon>
-                                        <ButtonIcon>
-                                            <FaInstagram />
-                                        </ButtonIcon>
-                                        <ButtonIcon>
-                                            <FaTwitter />
-                                        </ButtonIcon>
-                                        <ButtonIcon>
-                                            <FaLinkedin />
-                                        </ButtonIcon>
-                                        <ButtonIcon>
-                                            <FaYoutube />
-                                        </ButtonIcon>
+                                        <ButtonIcon><FaWhatsapp /></ButtonIcon>
+                                        <ButtonIcon><FaFacebookF /></ButtonIcon>
+                                        <ButtonIcon><FaInstagram /></ButtonIcon>
+                                        <ButtonIcon><FaYoutube /></ButtonIcon>
                                     </Social>
                                 </Col>
                                 <Col col={12}>
-                                    <Title>Se inscrever </Title>
+                                    <Title>Inscreva-se</Title>
                                     <Form>
                                         <Input placeholder="Seu email" />
                                         <Button><FiChevronRight /></Button>

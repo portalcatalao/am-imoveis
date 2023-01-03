@@ -118,13 +118,13 @@ export const ButtonIcon = styled.button`
     justify-content: center;
     gap: 6px;
 
-    border: 0;
+    border: 0.5px solid #ddd;
     border-radius: ${({ theme }) => theme.borders.main};
-    padding: 8px 12px;
+    padding: 8px 16px;
     height: 38px;
 
     color: ${({ theme }) => theme.colors.gray_100};
-    background: ${({ theme }) => theme.colors.gray_500};
+    background: #f7f7f7;
     cursor: pointer;
 
     transition: all .3s;
@@ -229,9 +229,8 @@ export const Features = styled.ul`
             width: 22px;
             height: 22px;
             color: ${({ theme }) => theme.colors.primary};
-            background-color: #fafafa;
-            padding: 6px;
-            border-radius: 6px;
+            padding: 5px;
+            border-radius: ${({ theme }) => theme.borders.main};
         }
     }
 `
@@ -275,7 +274,8 @@ export const ContactAgent = styled.div`
     
     img {
         object-fit: cover;
-        border-radius: 16%;
+        border-radius: ${({ theme }) => theme.borders.main};
+        height: 140px;
     }
 
     @media(max-width: 720px) {
@@ -324,7 +324,7 @@ export const SendMessage = styled.form`
     a {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 16px;
 
         svg {
@@ -332,13 +332,15 @@ export const SendMessage = styled.form`
             height: 18px;
         }
 
+        border: 0.5px solid #ddd;
+
         width: 50%;
         padding: 10px 12px;
         font-size: 14px;
         border-radius: ${({ theme }) => theme.borders.main};
-        background: #f1f1f1;
         cursor: pointer;
         color: ${({ theme }) => theme.colors.gray_100};
+        background-color: #f7f7f7;
 
         transition: all .2s;
         :hover {
@@ -354,4 +356,19 @@ export const TitleRelacionados = styled.h2`
     font-size: 1.4rem;
     color: ${({ theme }) => theme.colors.gray_100};
     padding: 0 10px;
+`
+
+export const Right = styled.div`
+    display: grid;
+    grid-template-rows: 2;
+    row-gap: 18px;
+    height: fit-content;
+`
+
+export const Simulate = styled.div`
+    padding: 28px;
+
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: ${({ theme }) => theme.borders.main};
+    background-color: #fff;
 `

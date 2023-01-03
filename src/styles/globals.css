@@ -55,7 +55,7 @@ a {
 .cardproperty .swiper-button-prev {
   width: 45px;
   height: 45px;
-  border-radius: 20%;
+  border-radius: 3px;
   font-size: 12px;
   transition: 0.2s;
   background-color: #f1f1f1ca;
@@ -80,7 +80,6 @@ a {
 
 
 @media (max-width: 1020px) {
-
   .cardproperty .swiper-button-next,
   .cardproperty .swiper-button-prev {
     display: none;
@@ -94,6 +93,7 @@ a {
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
+  z-index: 10;
 }
 
 /* Track */
@@ -105,8 +105,7 @@ a {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #333;
-  border: 2px solid #f1f1f1;
-  border-radius: 6px;
+  border: 1px solid #f1f1f1;
 }
 
 /* Handle on hover */

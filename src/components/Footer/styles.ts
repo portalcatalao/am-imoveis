@@ -34,7 +34,7 @@ export const ContentSecondary = styled.div`
 export const Title = styled.h2`
     font-size: 1.2rem;
     color: #fff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 `
 export const Text = styled.p`
     font-size: .875rem;
@@ -93,6 +93,7 @@ export const Button = styled.button`
     margin-left: .5rem;
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.white};
+    cursor: pointer;
     svg {
         font-size: 1.2rem;
     }

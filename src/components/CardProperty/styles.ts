@@ -14,7 +14,7 @@ export const Container = styled(Link)`
     background: ${({ theme }) => theme.colors.white};
     flex-grow: 1;     
     flex-shrink: 1; 
-    
+
     img {
         transition: transform .3s
     }
@@ -38,20 +38,21 @@ export const CardHeader = styled.div`
     padding: 20px;
     border-radius: ${({ theme }) => theme.borders.main};
 `
-
-export const Category = styled.div`
+interface Props {
+    rent?: boolean;
+}
+export const Category = styled.div<Props>`
     padding: 3px 8px;
 
     font-size: 12px;
     text-align: center;
-
-    background-color: #262937;
+    background: ${props => props.rent ? ({ theme }) => theme.colors.primary : "#262937"};
     border-radius: ${({ theme }) => theme.borders.main};
 `
 
 export const TagPrice = styled.div`
     width: 100%;
-    margin-bottom: 10px;
+    margin: 5px 0;
 
     font-weight: 400;
     font-size: 18px;
@@ -78,7 +79,7 @@ export const Mask = styled.div`
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 0) 45%, rgba(38, 38, 38, 0.8) 80%, rgba(38, 38, 38, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 0) 35%, rgba(38, 38, 38, 0.8) 90%, rgba(38, 38, 38, 0.9) 100%);
 `
 
 export const CardBody = styled.div`

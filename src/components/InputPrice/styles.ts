@@ -33,7 +33,8 @@ export const InputText = styled.input`
     text-align: right;
 
     border: 1px solid #d3d3d3;
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
+
     padding: .75rem;
     padding-left: 2.2rem;
 
@@ -55,7 +56,8 @@ export const Error = styled.span`
     align-items: center;
     margin-top: .875rem;
     padding: 6px 12px;
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
+
     background: #fff0f0;
     color: #f94949;
     font-size: .75rem;

@@ -26,7 +26,8 @@ export const Button = styled.button<ButtonProps>`
     height: 46px;
     width: 100%;
 
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
+
     border: 1px solid ${({ theme, active }) => active ? theme.colors.gray_400 : '#d3d3d3'};
     padding: .75rem ;
 
@@ -53,7 +54,8 @@ export const InputText = styled.input`
     height: 46px;
     width: 100%;
 
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
+
     border: .5px solid #d9d9d9;
     padding: .75rem ;
 
@@ -79,7 +81,8 @@ export const List = styled.ul<ListPros>`
     z-index: 999;
 
     background: ${({ theme }) => theme.colors.white};
-    border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borders.main};
+
     border: 1px solid ${({ theme }) => theme.colors.gray_400};
     padding: .75rem ;
 
@@ -96,7 +99,8 @@ export const Item = styled.button`
     text-align: start;
 
     padding: .25rem .75rem;
-    border-radius: 4px;
+    border-radius: ${({ theme }) => theme.borders.main};
+
     color: ${({ theme }) => theme.colors.gray_200};
     background: transparent;
     border: 0;
