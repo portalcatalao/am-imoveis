@@ -1,12 +1,8 @@
 import Link from 'next/link';
-
-import { CardProperty } from '../../components/CardProperty'
-import { InputSelect } from '../../components/InputSelect';
-import { Filter } from '../../components/Filter';
-
+import { CardProperty } from '../../components/Cards/Property'
+import { InputSelect } from '../../components/Forms/InputSelect';
+import { Filter } from '../../components/Forms/Filter';
 import { GridLayout } from '../../styles/globals'
-
-import { FiChevronRight } from "react-icons/fi";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
 import {

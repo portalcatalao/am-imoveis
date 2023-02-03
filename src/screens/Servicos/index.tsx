@@ -1,6 +1,6 @@
 import { Container } from './styles'
 
-import { HeaderPage } from '../../components/HeaderPage'
+import { HeaderPage } from '../../components/Breadcrumb'
 
 export default function Services() {
     return (

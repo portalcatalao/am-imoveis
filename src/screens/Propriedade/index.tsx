@@ -8,7 +8,7 @@ import { FaBath, FaCar } from 'react-icons/fa';
 import { IoBedSharp } from 'react-icons/io5'
 import { HiShare } from 'react-icons/hi'
 import { BsCheckLg } from 'react-icons/bs'
-import { CardProperty } from "../../components/CardProperty";
+import { CardProperty } from "../../components/Cards/Property";
 import Link from "next/link";
 
 import {

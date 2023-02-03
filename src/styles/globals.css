@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap');
 
+* {
+  font-family: "Poppins", sans-serif !important;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html,
 body {
   padding: 0;
@@ -18,38 +25,13 @@ a {
   text-decoration: none;
 }
 
-* {
-  font-family: "Poppins", sans-serif !important;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 .swiper-slide {
   width: fit-content !important;
 }
 
 .swiper {
   width: 100%;
-  overflow: visible !important;
 }
-
-@media(max-width: 720px) {
-  .swiper {
-    padding-left: 8px;
-  }
-}
-
-/* .swiper::before {
-  position: absolute;
-  content: '';
-  height: 100%;
-  width: 100vh;
-  top: 0;
-  left: -100vh;
-  background: #f9f9f9;
-  z-index: 9999;
-} */
 
 .cardproperty .swiper-button-next,
 .cardproperty .swiper-button-prev {
@@ -61,33 +43,21 @@ a {
   background-color: #f1f1f1ca;
 }
 
-.cardproperty .swiper-button-next::after,
-.cardproperty .swiper-button-prev::after {
+.swiper-button-next::after,
+.swiper-button-prev::after {
   font-size: 24px;
   font-weight: 600;
   color: rgba(51, 51, 51, 0.575);
 }
 
-.cardproperty .swiper-button-next:hover::after,
-.cardproperty .swiper-button-prev:hover::after {
-  color: #fff;
-}
-
-.cardproperty .swiper-button-next:hover,
-.cardproperty .swiper-button-prev:hover {
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
   background-color: #EC700F;
 }
 
-
-@media (max-width: 1020px) {
-  .cardproperty .swiper-button-next,
-  .cardproperty .swiper-button-prev {
-    display: none;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: #fff;
 }
 
 /* width */
@@ -111,4 +81,22 @@ a {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #222;
+}
+
+@media (max-width: 1020px) {
+
+  .cardproperty .swiper-button-next,
+  .cardproperty .swiper-button-prev {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media(max-width: 720px) {
+  .swiper {
+    padding-left: 8px;
+  }
 }

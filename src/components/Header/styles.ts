@@ -119,7 +119,6 @@ export const Button = styled.button`
 
     border: 0;
     border-radius: ${({ theme }) => theme.borders.main};
-
     background: ${({ theme }) => theme.colors.primary}!important;
     color: ${({ theme }) => theme.colors.white}!important;
     font-weight: 500;

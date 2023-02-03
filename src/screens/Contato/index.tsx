@@ -1,4 +1,4 @@
-import { HeaderPage } from '../../components/HeaderPage'
+import { HeaderPage } from '../../components/Breadcrumb'
 import { Container } from './styles'
 
 export default function Contact() {

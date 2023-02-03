@@ -18,17 +18,15 @@ export default function App({ Component, pageProps }: AppProps) {
   const [top, setTop] = useState(true);
   const router = useRouter();
 
-  const handleScroll = (e) => {
-    if (e.target.scrollTop != 0 && top) {
-      setTop(false);
-    } else {
-      if (e.target.scrollTop === 0 && router.asPath === "/") {
-        setTop(true)
-      }
-    }
+  const getPositionScroll = () => {
+    let body = document.querySelector('body');
+    let positions = body.getBoundingClientRect();
+    { positions.y === 0 ? setTop(true) : setTop(false) };
   }
 
   useEffect(() => {
+    window.addEventListener('scroll', getPositionScroll);
+
     if (router.asPath === "/") {
       setTop(true);
     } else {
@@ -37,9 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className='body' onScroll={handleScroll} style={{
-      height: '100vh',
-      width: '100%',
+    <div className='body' onScroll={getPositionScroll} style={{
       overflowY: 'auto',
       overflowX: 'hidden',
       scrollBehavior: 'smooth',

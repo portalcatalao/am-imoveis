@@ -87,3 +87,27 @@ export const Col = styled.div<Props>`
         max-width: 100%;
     }
 `
+export const Title = styled.h1<Props>`
+    text-align: center;
+    font-size: 56px;
+    font-weight: 600;
+    color: ${({ cl }) => cl ?? '#ffffff'};
+    font-size: ${({ fz }) => fz ?? "1.2rem"};
+
+    @media (max-width: 720px) {
+        padding: 10px;
+        font-size: 28px;
+    }
+`
+
+export const Subtitle = styled.p<Props>`
+    font-size: ${({ fz }) => fz ?? "1.2rem"};
+    color: ${({ cl }) => cl ?? '#ffffff'};
+    text-align: ${({ ai }) => ai ?? 'left'};
+    margin-bottom: 2rem;
+
+    @media (max-width: 720px) {
+        padding: 10px;
+        font-size: 18px;
+    }
+`
