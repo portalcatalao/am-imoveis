@@ -3,7 +3,7 @@ import { GridLayout, Section, Subtitle, Title } from '../../../styles/globals'
 import theme from '../../../styles/theme'
 import { CardTypeProperty } from '../../Cards/PropertyType'
 import { BackgroundSection, TypePropertyContent } from './styles'
-import BackgroundBanner from "../../../../public/images/banner-home1.jpg"
+import BackgroundBanner from "../../../../public/images/banner-home2.jpg"
 
 export function PropertyTypes() {
     return (

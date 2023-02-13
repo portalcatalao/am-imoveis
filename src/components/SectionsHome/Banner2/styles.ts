@@ -25,7 +25,6 @@ export const Background = styled.div`
 export const ContentBanner = styled.div`
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,8 +32,8 @@ export const ContentBanner = styled.div`
 
 
     img {
-        width: 120px;
-        height: 85px;
+        width: 100px;
+        height: 65px;
         position: absolute;
         bottom: 26px;
         left: 26px;
@@ -47,11 +46,13 @@ export const ContentBanner = styled.div`
         img {
             width: 80px;
             height: 60px;
+            bottom: 30px;
+            left: 20px;
         }
     }
 `
 export const TitleMain = styled.h1`
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 600;
     color: #fff;
 
@@ -61,7 +62,6 @@ export const TitleMain = styled.h1`
 `
 export const Title = styled.h1<Props>`
     text-align: center;
-    /* font-family: 'Nunito', sans-serif !important; */
     font-size: ${({ fz }) => fz ?? "56px"};
     font-weight: 600;
     color: ${({ cl }) => cl ?? '#ffffff'};
@@ -71,12 +71,12 @@ export const Title = styled.h1<Props>`
         font-size: 28px;
     }
 `
-export const Subtitle = styled.p<Props>`
-    /* font-family: 'Nunito', sans-serif !important; */
+export const Subtitle = styled.h2<Props>`
     font-size: ${({ fz }) => fz ?? "1.2rem"};
     color: ${({ cl }) => cl ?? '#ffffff'};
     text-align: ${({ ai }) => ai ?? 'left'};
     margin-bottom: 2rem;
+    font-weight: 400;
 
     @media (max-width: 720px) {
         font-size: 18px;
@@ -116,13 +116,17 @@ export const Form = styled.form`
 
     background: ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.borders.main};
-    padding: 16px;
+    padding: 12px;
 
     @media (max-width: 720px) {
         display: flex;
         flex-direction: column;
         background: none;
         padding: 0;
+
+        input, button {
+            height: 56px;
+        }
     }
 `
 export const Type = styled.div`
@@ -138,9 +142,7 @@ export const Type = styled.div`
         border: none;
         width: 100%;
 
-        input, button {
-            border: 0.5px solid #dfdfdf;
-        }
+        
     }
 `
 export const ButtonScroll = styled.button`
@@ -156,6 +158,7 @@ export const ButtonScroll = styled.button`
     }
 `
 export const Input = styled.input`
+    display: block;
     flex: 1;
     border: 0;
     font-size: .875rem;
@@ -168,8 +171,9 @@ export const Input = styled.input`
 
     @media (max-width: 720px) {
         border: 0.5px solid #dfdfdf;
-        padding: 12.5px 10px;
+        padding: 17px 10px;
         border-radius: ${({ theme }) => theme.borders.main};
+
 
         :focus {
             border: 0.5px solid #dfdfdf;
@@ -198,4 +202,16 @@ export const ButtonSubmit = styled.button`
     font-weight: 500;
 
     cursor: pointer;
+`
+
+export const Text = styled.div`
+    width: 100%;
+    position: relative;
+    bottom: 8%;
+    
+    @media (max-width: 720px) {
+        h1, h2 {
+            text-align: center;
+        }
+    }
 `

@@ -21,6 +21,7 @@ export const GridLayout = styled.div<Props>`
     max-width: 1312px;
     margin: 0 auto;
     padding: ${({ p }) => p ?? 0};
+    position: relative;
     
     display: flex;
     flex-wrap: wrap;

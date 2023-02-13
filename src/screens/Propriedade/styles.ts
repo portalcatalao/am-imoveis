@@ -11,11 +11,6 @@ export const Container = styled.div`
     }
 `
 export const Gallery = styled.div`
-    /* display: grid;
-    grid-template-columns: 1fr 450px;
-    grid-template-rows: 1fr;
-    */
-
     display: flex;
     width: 100%;
     height: 480px;
@@ -207,7 +202,7 @@ export const Divisor = styled.div`
 `
 export const Features = styled.ul`
     list-style-type: none;
-    max-height: 240px;
+    max-height: 120px;
 
     @media (max-width: 720px) {
         max-height: 380px;
@@ -235,10 +230,10 @@ export const Features = styled.ul`
     }
 `
 export const Video = styled.div`
-    height: 440px;
+    height: 280px;
 
     iframe {
-        width: 100%;
+        width: 60%;
         height: 100%;
         border: 0;
         border-radius: ${({ theme }) => theme.borders.main};
@@ -271,11 +266,11 @@ export const Contact = styled.div`
 `
 export const ContactAgent = styled.div`
     display: flex;
-    
+
     img {
         object-fit: cover;
-        border-radius: ${({ theme }) => theme.borders.main};
-        height: 140px;
+        border-radius: 50%;
+        height: 100px;
     }
 
     @media(max-width: 720px) {
@@ -283,8 +278,7 @@ export const ContactAgent = styled.div`
         align-items: center;
 
         img {
-            height: 180px;
-            margin-bottom: 20px;
+            height: 160px;
         }
     }
 `

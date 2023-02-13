@@ -4,10 +4,9 @@ import Link from 'next/link';
 export const Container = styled(Link)`
     position: relative;
     display: flex;
-    max-width: 430px;
-    min-width: 300px;
+    width: 380px;
     flex-flow: wrap;
-    height: 340px;
+    height: 300px;
     color: #fff;
     border: 0.5px solid #ebebeb;
     border-radius: ${({ theme }) => theme.borders.main};
@@ -32,7 +31,7 @@ export const CardHeader = styled.div`
 
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 8px;
 
     width: 100%;
     padding: 20px;
@@ -43,7 +42,6 @@ interface Props {
 }
 export const Category = styled.div<Props>`
     padding: 3px 8px;
-
     font-size: 12px;
     text-align: center;
     background: ${props => props.rent ? ({ theme }) => theme.colors.primary : "#262937"};
@@ -75,30 +73,28 @@ export const Thumbnail = styled.div`
 
 export const Mask = styled.div`
     position: absolute;
-
     width: 100%;
     height: 100%;
-
-    background: linear-gradient(180deg, rgba(38, 38, 38, 0) 0%, rgba(38, 38, 38, 0) 35%, rgba(38, 38, 38, 0.8) 90%, rgba(38, 38, 38, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(38, 41, 55, 0.1), rgba(38, 41, 55, 0.3), rgba(38, 41, 55, 0.6), rgba(38, 41, 55, 0.9));
 `
 
 export const CardBody = styled.div`
     position: absolute;
     bottom: 0;
-
     width: 100%;
     padding: 20px;
 `
 
 export const Title = styled.div`
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
 `
 
 export const Address = styled.div`
     display: flex;
     align-items: center;
     font-size: 14px;
+    margin-top: 4px;
 `
 
 export const Resume = styled.ul`

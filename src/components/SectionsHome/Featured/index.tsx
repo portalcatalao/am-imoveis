@@ -1,12 +1,19 @@
 import { FiChevronRight } from 'react-icons/fi'
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { getPropertyTitleCard, getUrl } from '../../../helpers/functions';
+import { maskPrice } from '../../../helpers/mask';
 import { GridLayout, Section, Subtitle, Title } from '../../../styles/globals'
 import theme from '../../../styles/theme'
+import { IProperty } from '../../../types/interfaces';
 import { CardProperty } from '../../Cards/Property'
 import { LinkButton, TopCard } from './styles'
 
-export function Featured() {
+interface Props {
+    properties: IProperty[];
+}
+
+export function Featured({ properties }: Props) {
     return (
         <Section bg="#f9f9f9" p="0 0 2rem 0">
             <GridLayout p="2rem 0">
@@ -27,97 +34,23 @@ export function Featured() {
                     navigation={true}
                     className="cardproperty"
                 >
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
-                            forSell={true}
-                            price="570.000,00"
-                            title="Nossa Senhora de Fátima"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221230090034_52430.jpg"
-                            forSell={true}
-                            price="570.000,00"
-                            title="Ipanema"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221221152839_04820.jpg"
-                            forRent={true}
-                            price="570.000,00"
-                            title="Jardim Florença"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
-                            forSell={true}
-                            price="570.000,00"
-                            title="Nossa Senhora de Fátima"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221230090034_52430.jpg"
-                            forSell={true}
-                            price="570.000,00"
-                            title="Ipanema"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221221152839_04820.jpg"
-                            forRent={true}
-                            price="570.000,00"
-                            title="Jardim Florença"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardProperty
-                            src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
-                            forSell={true}
-                            price="570.000,00"
-                            title="Nossa Senhora de Fátima"
-                            city="Catalão"
-                            bed="3"
-                            bath="2"
-                            car="2"
-                            area="138"
-                        />
-                    </SwiperSlide>
+                    {properties.map(property =>
+                        <SwiperSlide>
+                            <CardProperty
+                                src={getUrl(property.thumbnail)}
+                                forSell={property.adType === 'venda'}
+                                forRent={property.adType === 'aluguel'}
+                                price={maskPrice(property.value)}
+                                title={property.address.district}
+                                city={property.type.charAt(0).toUpperCase() + property.type.slice(1) + ' em ' + property.address.city}
+                                bed={property.numberRooms}
+                                bath={property.numberBathrooms}
+                                car={property.numberGarages}
+                                area={property.area}
+                                id={property.id}
+                            />
+                        </SwiperSlide>
+                    )}
                 </Swiper>
             </GridLayout>
         </Section>

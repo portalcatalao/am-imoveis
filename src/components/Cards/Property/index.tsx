@@ -11,23 +11,25 @@ interface Props {
     price?: string,
     title?: string,
     city?: string,
-    bed?: string,
-    bath?: string,
-    car?: string,
-    area?: string
+    bed?: number,
+    bath?: number,
+    car?: number,
+    area?: number,
+    id?: number | string;
 }
 
-export function CardProperty({ src, forRent, forSell, price, title, city, bed, bath, car, area }: Props) {
+export function CardProperty({ src, forRent, forSell, price, title, city, bed, bath, car, area, id }: Props) {
+    console.log(forRent);
     return (
-        <Container href={"/imoveis/teste"}>
+        <Container href={`/imoveis/teste/${id}`}>
             <Thumbnail>
                 <Image src={src} alt={""} layout="fill" />
                 <Mask />
             </Thumbnail>
 
             <CardHeader>
-                {forRent && <Category rent={true} >Para alugar</Category>}
                 {forSell && <Category rent={false}>Para venda</Category>}
+                {forRent && <Category rent={true} >Para alugar</Category>}
             </CardHeader>
 
             <CardBody>

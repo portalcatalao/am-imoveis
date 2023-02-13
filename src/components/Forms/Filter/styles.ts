@@ -67,7 +67,7 @@ export const Container = styled.form<Props>`
         gap: 16px;
     }
 
-    @media (max-width: 1020px) {
+    @media (max-width: 1320px) {
         position: fixed;
         top: 0;
         left: 0;

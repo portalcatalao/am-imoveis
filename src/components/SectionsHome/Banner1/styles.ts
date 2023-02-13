@@ -113,7 +113,6 @@ export const Type = styled.div`
     width: 180px;
     border-right: 1px solid #d3d3d3;
     
-    
     button {
         border: 0!important;
         font-weight: 400;

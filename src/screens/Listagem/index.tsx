@@ -4,14 +4,27 @@ import { InputSelect } from '../../components/Forms/InputSelect';
 import { Filter } from '../../components/Forms/Filter';
 import { GridLayout } from '../../styles/globals'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
+import { useEffect, useState } from 'react'
 
 import {
     Container, Breadcrumb, Content, Results, Properties,
     Top, Right, Bot,
 } from './styles'
 
+import { getUrl } from '../../helpers/functions';
+import { maskPrice } from '../../helpers/mask';
+import { IProperty } from '../../types/interfaces';
+import { Pagination } from '../../components/Pagination';
 
-export default function Listing() {
+interface Props {
+    properties: IProperty[];
+    total: number,
+    page: number
+}
+
+export default function Listing({ properties, total, page }: Props) {
+    const [pages, setPages] = useState(1);
+
     return (
         <Container>
             <GridLayout>
@@ -32,113 +45,25 @@ export default function Listing() {
                         </Top>
 
                         <Properties>
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221114095148_60464.jpg"
-                                forRent={true}
-                                price="570.000,00"
-                                title="Jardim Florença"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221230090034_52430.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Margon II"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221221152839_04820.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Nossa Senhora de Fátima"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Nossa Senhora de Fátima"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221222154032_09984.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Ipanema"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221226133509_71837.jpg"
-                                forRent={true}
-                                price="570.000,00"
-                                title="Jardim Florença"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221230090034_52430.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Margon II"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221221152839_04820.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Nossa Senhora de Fátima"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
-                            <CardProperty
-                                src="https://amimoveiscatalao.com.br/painel/upload/imoveis/20221214120837_44704.jpg"
-                                forSell={true}
-                                price="570.000,00"
-                                title="Nossa Senhora de Fátima"
-                                city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
-                            />
+                            {properties?.map(property =>
+                                <CardProperty
+                                    src={getUrl(property.thumbnail)}
+                                    forSell={property.adType === 'venda'}
+                                    forRent={property.adType === 'aluguel'}
+                                    price={maskPrice(property.value)}
+                                    title={property.address.district}
+                                    city={property.type.charAt(0).toUpperCase() + property.type.slice(1) + ' em ' + property.address.city}
+                                    bed={property.numberRooms}
+                                    bath={property.numberBathrooms}
+                                    car={property.numberGarages}
+                                    area={property.area}
+                                    id={property.id}
+                                />
+                            )}
                         </Properties>
 
                         <Bot>
-                            <li><AiOutlineArrowLeft /></li>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>...</li>
-                            <li><AiOutlineArrowRight /></li>
+                            <Pagination total={total} page={page} onChange={setPages} />
                         </Bot>
                     </Results>
                 </Content>
