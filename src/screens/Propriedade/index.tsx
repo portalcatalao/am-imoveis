@@ -235,9 +235,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Nossa Senhora de Fátima"
                                 city="Catalão"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -247,10 +248,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Ipanema"
                                 city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -260,10 +261,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Jardim Florença"
                                 city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -273,10 +274,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Nossa Senhora de Fátima"
                                 city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -286,10 +287,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Ipanema"
                                 city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -299,10 +300,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Jardim Florença"
                                 city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -312,10 +313,10 @@ export default function Property({ property }) {
                                 price="570.000,00"
                                 title="Nossa Senhora de Fátima"
                                 city="Catalão"
-                                bed="3"
-                                bath="2"
-                                car="2"
-                                area="138"
+                                bed={3}
+                                bath={2}
+                                car={2}
+                                area={138}
                             />
                         </SwiperSlide>
                     </Swiper>
