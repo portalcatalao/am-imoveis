@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
-import Property from "../../src/screens/Propriedade";
 import { api } from "../../src/services/api";
+import Property from "../../src/screens/Propriedade";
 
 export default function PropertyPage({ property }) {
     return (

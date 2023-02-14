@@ -4,9 +4,9 @@ import Link from 'next/link';
 export const Container = styled(Link)`
     position: relative;
     display: flex;
-    width: 380px;
-    flex-flow: wrap;
+    width: 300px;
     height: 300px;
+    flex-flow: wrap;
     color: #fff;
     border: 0.5px solid #ebebeb;
     border-radius: ${({ theme }) => theme.borders.main};

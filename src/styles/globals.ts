@@ -39,7 +39,7 @@ export const GridLayout = styled.div<Props>`
         padding: 20px 10px;
     }
 `
-export const Section = styled.div<Props>`
+export const Section = styled.section<Props>`
     width: ${({ w }) => w ?? '100%'};
     height: ${({ h }) => h ?? 'auto'};
     margin: ${({ m }) => m ?? 0};

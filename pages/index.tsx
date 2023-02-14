@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import { Home } from "../src/screens/Home";
 import { api } from "../src/services/api";
 
-export default function HomePage({properties}) {
+export default function HomePage({ properties }) {
   return (
     <Home properties={properties} />
   )
