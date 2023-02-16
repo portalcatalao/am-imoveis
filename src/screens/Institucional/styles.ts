@@ -16,7 +16,7 @@ export const Description = styled.p`
 `
 
 export const Background = styled.div`
-    height: 100%;
+    height: fit-content;
     padding: 20px 0;
     
     img {
@@ -30,6 +30,10 @@ export const Content = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
+
+    @media(max-width: 930px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const Text2 = styled.ul`
