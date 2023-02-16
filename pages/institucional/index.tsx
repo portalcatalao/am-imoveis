@@ -1,8 +1,8 @@
 import Institutional from '../../src/screens/Institucional'
 
-export default function InstitutionalPage({ properties }) {
+export default function InstitutionalPage() {
     return (
-        <Institutional properties={properties} />
+        <Institutional />
     )
 }
 
