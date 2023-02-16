@@ -4,7 +4,6 @@ import { PropertyTypes } from "../../components/SectionsHome/PropertyTypes";
 import { Localities } from "../../components/SectionsHome/Localities";
 import { Brokers } from "../../components/SectionsHome/Brokers";
 import { News } from '../../components/SectionsHome/News';
-import { GridLayout } from "../../styles/globals";
 
 export function Home({ properties }) {
     return (
@@ -13,7 +12,16 @@ export function Home({ properties }) {
                 title="Encontre o seu imóvel aqui!"
                 subtitle="Conte com os melhores imóveis para você escolher!"
             />
-            <Featured properties={properties} />
+            <Featured
+                title="Imóveis em destaque"
+                properties={properties}
+                p="2rem 0"
+            />
+            <Featured
+                title="Imóveis recentemente adicionados"
+                properties={properties}
+                p="0 0 4rem 0"
+            />
             <PropertyTypes />
             <Localities />
             <Brokers />

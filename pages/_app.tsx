@@ -1,16 +1,13 @@
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react'
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
 import '../src/styles/globals.css'
 import theme from '../src/styles/theme'
 import { ThemeProvider } from 'styled-components'
-
 import { Header } from '../src/components/Header'
 import { Footer } from '../src/components/Footer';
 

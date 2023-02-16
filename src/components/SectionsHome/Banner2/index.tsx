@@ -1,36 +1,27 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { BsMouse } from "react-icons/bs";
+import { useState } from "react";
 import { useSelect } from "../../../hooks/useSelect";
 import { GridLayout } from "../../../styles/globals";
-import { Banner, Background, ButtonScroll, ButtonSubmit, ContentBanner, Form, Input, Search, Subtitle, Tab, Tabs, TitleMain, Type, Text } from "./styles";
+import { InputSelect } from "../../Forms/InputSelect";
+import {
+    Banner, Background, ButtonSubmit, ContentBanner, Form,
+    Input, Search, Subtitle, Tab, Tabs, TitleMain, Type, Text
+} from "./styles";
+
 import CaixaAqui from "../../../../public/images/caixa.svg"
 import BannerBackground from "../../../../public/images/banner-home2.jpg"
-import { InputSelect } from "../../Forms/InputSelect";
 
 export function BannerHome({ title, subtitle }) {
-    const [bannerHeight, setBannerHeight] = useState(0);
-    const bannerRef = useRef(null);
     const [adTypeActive, setAdTypeActive] = useState(0);
     const adType = useSelect();
 
-    const handleScrollTo = (e) => {
-        const body = document.querySelector('body');
-        body.scrollTo({ top: bannerHeight - 72 });
-    }
-
-    useEffect(() => {
-        setBannerHeight(bannerRef.current.offsetHeight)
-    }, []);
-
     return (
-        <Banner ref={bannerRef}>
+        <Banner>
             <Background>
                 <Image src={BannerBackground} alt="banner" />
             </Background>
-            <ContentBanner>
-                <Image src={CaixaAqui} alt="Caixa Aqui" />
 
+            <ContentBanner>
                 <GridLayout p="2rem 8rem">
                     <Text>
                         <TitleMain>{title}</TitleMain>
@@ -54,9 +45,8 @@ export function BannerHome({ title, subtitle }) {
                         </Search>
                     </Text>
                 </GridLayout>
-                <ButtonScroll onClick={handleScrollTo}>
-                    <BsMouse />
-                </ButtonScroll>
+
+                <Image src={CaixaAqui} alt="Caixa Aqui" />
             </ContentBanner>
         </Banner>
     )

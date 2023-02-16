@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    height: 200px;  
+    height: 140px;  
     position: initial!important;
     margin-top: 72px;
     background-image: url("https://creativelayers.net/themes/findhouse-html/images/background/inner-pagebg.jpg");

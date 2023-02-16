@@ -64,6 +64,9 @@ export const Row = styled.div<Props>`
     overflow: hidden;
     background: ${({ bg }) => bg ?? 'transparent'};
 
+    align-items: ${({ ai }) => ai ?? "flex-start"};
+    justify-content: ${({ jc }) => jc ?? "flex-start"};
+
     @media (max-width: 720px) {
         flex: 1;
         max-width: 100%;
@@ -105,7 +108,7 @@ export const Subtitle = styled.p<Props>`
     font-size: ${({ fz }) => fz ?? "1.2rem"};
     color: ${({ cl }) => cl ?? '#ffffff'};
     text-align: ${({ ai }) => ai ?? 'left'};
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @media (max-width: 720px) {
         padding: 10px;

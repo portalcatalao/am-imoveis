@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BackgroundSection = styled.div`
-    height: 300px;
+    height: 320px;
     width: 100%;
 
     position: absolute;
@@ -18,10 +18,9 @@ export const BackgroundSection = styled.div`
 `
 export const TypePropertyContent = styled.div`
     background-color: #fff;
-    border-radius: ${({ theme }) => theme.borders.secondary};
+    border-radius: ${({ theme }) => theme.borders.main};
     display: flex;
     justify-content: center;
-    padding: 0 12px;
     
     div {
         display: flex;

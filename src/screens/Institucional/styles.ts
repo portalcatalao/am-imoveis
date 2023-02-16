@@ -21,6 +21,8 @@ export const Background = styled.div`
     
     img {
         border-radius: ${({ theme }) => theme.borders.main};
+        width: 100%;
+        height: 77%;
     }
 `
 
@@ -30,31 +32,23 @@ export const Content = styled.div`
     grid-gap: 20px;
 `
 
-
 export const Text2 = styled.ul`
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 16px;
     
-    span {
+    h2 {
+        display: block;
         font-weight: 600;
-        ::before {
-            content: "";
-            display: inline-block;
-            width: 12px;
-            height: 8px;
-            margin-right: 4px;
-            margin-bottom: 2px;
-            background-color: ${({ theme }) => theme.colors.primary};
-            border-radius:  ${({ theme }) => theme.borders.main};;
-        }
+        font-size: 18px;
+        margin-bottom: 12px;
     }
 
     ul {
         list-style-type: none;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 16px;
     }
 
@@ -67,9 +61,8 @@ export const Text2 = styled.ul`
 `
 
 export const Text = styled.div`
-    display: flex;
+    display: grid;
     flex-direction: column;
-    max-width: 750px;
 `
 
 export const Card = styled.div`
@@ -86,11 +79,11 @@ export const Card = styled.div`
 
         ::before {
             content: "";
-            display: block;
+            display: inline-block;
             width: 12px;
             height: 8px;
             margin-right: 4px;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             background-color: ${({ theme }) => theme.colors.primary};
             border-radius:  ${({ theme }) => theme.borders.main};;
         }

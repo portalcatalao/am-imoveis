@@ -86,12 +86,18 @@ a {
 
 @media (max-width: 1020px) {
 
-  .cardproperty .swiper-button-next,
-  .cardproperty .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none;
   }
 
   ::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@media(max-width: 720px) {
+  .swiper {
+    padding: 0 10px;
   }
 }

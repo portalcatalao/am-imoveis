@@ -1,18 +1,22 @@
-import { GridLayout, Section } from "../../styles/globals";
+import { GridLayout, Section, Subtitle } from "../../styles/globals";
 import { Container } from './styles'
 import { HeaderPage } from '../../components/Breadcrumb'
 import { Title, Text, Text2, Background, Content, Description, Card } from './styles'
 import Image from "next/image";
+import theme from "../../styles/theme";
 
 
-export default function Institutional({ properties }) {
+export default function Institutional() {
     return (
         <Container>
             <HeaderPage title="Institucional" />
-
             <Section bg="#fff" p="0 0 2rem 0">
                 <GridLayout p="2rem 0">
                     <Title>Quem Somos</Title>
+                    <Subtitle cl={theme.colors.gray_100} fz={"1rem"}>
+                        Conheça um pouco da nossa história!
+                    </Subtitle>
+
                     <Content>
                         <Background>
                             <Description>Em 2013, iniciamos nossas atividades com uma estrutura preparada para atender às necessidades do mercado imobiliário, sempre contando com uma equipe de profissionais altamente qualificados e experientes, que sempre priorizam a honestidade e o atendimento das expectativas dos clientes.</Description>
@@ -25,7 +29,7 @@ export default function Institutional({ properties }) {
                             </Card>
                             <Card>
                                 <h2>Visão</h2>
-                                <p>Nossa visão é expandir nosso negócio e ser reconhecida como líder na oferta de soluções imobiliárias de excelência, atendendo às necessidades e expectativas dos nossos clientes de maneira inovadora e eficiente.</p>
+                                <p>Nossa visão é expandir nosso negócio e ser reconhecido como líder na oferta de soluções imobiliárias de excelência, atendendo as necessidades e expectativas dos nossos clientes de maneira inovadora e eficiente.</p>
                             </Card>
                             <Card>
                                 <h2>Valores</h2>
@@ -36,7 +40,7 @@ export default function Institutional({ properties }) {
                 </GridLayout>
             </Section>
 
-            <Section bg="#f9f9f9" p="0 0 2rem 0">
+            {/* <Section bg="#f9f9f9" p="0 0 2rem 0">
                 <GridLayout p="2rem 0">
                     <Text2>
                         <h1>Estrutura</h1>
@@ -46,31 +50,31 @@ export default function Institutional({ properties }) {
 
                         <ul>
                             <li>
-                                <span>Comercial e Administrativo</span>
+                                <h2>Comercial e Administrativo</h2>
                                 <p>
                                     Possui uma equipe de corretores de imóveis especializada e devidamente cadastrada junto ao CRECI e uma equipe de departamento de aluguel com experiência no mercado por mais de 10 anos, contamos com um suporte administrativo para realização de um bom negócio com segurança e agilidade.
                                 </p>
                             </li>
                             <li>
-                                <span>Departamento de Aluguel</span>
+                                <h2>Departamento de Aluguel</h2>
                                 <p>
                                     Setor preparado para atender a administrar os imóveis dos clientes que buscam uma negociação competente, experiente, transparente e com seriedade.
                                 </p>
                             </li>
                             <li>
-                                <span>Departamento Financeiro</span>
+                                <h2>Departamento Financeiro</h2>
                                 <p>
                                     Área que oferece suporte completo ao cliente no departamento de aluguel e na compra/venda acompanhando todo processo de financiamento.
                                 </p>
                             </li>
                             <li>
-                                <span>Assessoria Jurídica</span>
+                                <h2>Assessoria Jurídica</h2>
                                 <p>
                                     Departamento jurídico gratuito proporciona segurança e tranquilidade nas soluções de questões atuando através de consultoria e atendendo os interesses dos clientes em processos.
                                 </p>
                             </li>
                             <li>
-                                <span>Departamento de Vendas</span>
+                                <h2>Departamento de Vendas</h2>
                                 <p>
                                     Setor responsável por negociar os imóveis nas mais variadas faixas de preços e localizações.
                                 </p>
@@ -78,7 +82,7 @@ export default function Institutional({ properties }) {
                         </ul>
                     </Text2>
                 </GridLayout>
-            </Section>
+            </Section> */}
         </Container>
     )
 }

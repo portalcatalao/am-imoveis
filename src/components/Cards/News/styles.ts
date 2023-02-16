@@ -7,13 +7,12 @@ export const Container = styled(Link)`
     flex-direction: column;
 
     width: 316px;
-    height: 380px;
+    height: 316px;
     border: 0.5px solid #e0e0e0;
     border-radius: ${({ theme }) => theme.borders.main};
 `
 export const CardHeader = styled.div`
     width: 100%;
-    margin-bottom: 10px;
 `
 export const Thumbnail = styled.div`
     width: 100%;
@@ -40,7 +39,7 @@ export const CardBody = styled.div`
     width: 100%;
     padding: 10px 20px;
     position: relative;
-    top: 50%;
+    top: 45%;
     color: #fafafa;
 `
 

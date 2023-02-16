@@ -7,7 +7,7 @@ export const Header = styled.div`
 `
 export const Thumbnail = styled.div`
     width: 203px;
-    height: 260px;
+    height: 240px;
     border-radius: ${({ theme }) => theme.borders.main};
     overflow: hidden;
     position: relative;

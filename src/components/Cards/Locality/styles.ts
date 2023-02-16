@@ -7,7 +7,7 @@ export const Container = styled.div`
     border-radius: ${({ theme }) => theme.borders.main};
     overflow: hidden;
     
-    display: flex;
+    display: flex;  
     transition: .3s;
     position: relative;
 
@@ -45,10 +45,9 @@ export const Thumbnail = styled.div`
     }
 `
 export const Title = styled.span`
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 500;
     color: ${({ theme }) => theme.colors.white};
-    margin-bottom: 15px;
     text-align: center;
         
     @media (max-width: 720px) {

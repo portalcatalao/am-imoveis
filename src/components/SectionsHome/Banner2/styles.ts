@@ -30,7 +30,6 @@ export const ContentBanner = styled.div`
     justify-content: center;
     align-items: center;
 
-
     img {
         width: 100px;
         height: 65px;

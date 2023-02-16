@@ -9,8 +9,9 @@ export function Brokers() {
     return (
         <Section bg="#f9f9f9">
             <GridLayout p="2rem 0">
-                <Title cl={theme.colors.gray_100} fz={"1.8rem"}>Nossos corretores</Title>
-                <Subtitle cl={theme.colors.gray_100} fz={"1rem"}>Equipe especializada pronta para te atender.</Subtitle>
+                <Title cl={theme.colors.gray_100} fz={"1.8rem"}>Corretores</Title>
+                <Subtitle cl={theme.colors.gray_100} fz={"1rem"}>Nossa equipe especializada pronta para te atender</Subtitle>
+
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={18}
@@ -23,7 +24,6 @@ export function Brokers() {
                             src="https://creativelayers.net/themes/findhouse-html/images/team/6.jpg"
                             title="Sebastiana Oliveira"
                             subtitle="Especialista em vendas"
-
                             whatsapp="www.whatsapp.com.br"
                             facebook="www.facebook.com.br"
                             instagram="www.instagram.com.br"
@@ -35,7 +35,6 @@ export function Brokers() {
                             src="https://creativelayers.net/themes/findhouse-html/images/team/10.jpg"
                             title="Sebastião Ferreira"
                             subtitle="Especialista em aluguéis"
-
                             whatsapp="www.whatsapp.com.br"
                             facebook="www.facebook.com.br"
                             instagram="www.instagram.com.br"
@@ -47,7 +46,6 @@ export function Brokers() {
                             src="https://creativelayers.net/themes/findhouse-html/images/team/8.jpg"
                             title="Maria Silveira"
                             subtitle="Especialista em vendas"
-
                             whatsapp="www.whatsapp.com.br"
                             facebook="www.facebook.com.br"
                             instagram="www.instagram.com.br"
@@ -59,7 +57,6 @@ export function Brokers() {
                             src="https://creativelayers.net/themes/findhouse-html/images/team/6.jpg"
                             title="Sebastiana Oliveira"
                             subtitle="Especialista em vendas"
-
                             whatsapp="www.whatsapp.com.br"
                             facebook="www.facebook.com.br"
                             instagram="www.instagram.com.br"
@@ -71,7 +68,6 @@ export function Brokers() {
                             src="https://creativelayers.net/themes/findhouse-html/images/team/10.jpg"
                             title="Sebastião Ferreira"
                             subtitle="Especialista em aluguéis"
-
                             whatsapp="www.whatsapp.com.br"
                             facebook="www.facebook.com.br"
                             instagram="www.instagram.com.br"
@@ -83,7 +79,6 @@ export function Brokers() {
                             src="https://creativelayers.net/themes/findhouse-html/images/team/8.jpg"
                             title="Maria Silveira"
                             subtitle="Especialista em vendas"
-
                             whatsapp="www.whatsapp.com.br"
                             facebook="www.facebook.com.br"
                             instagram="www.instagram.com.br"

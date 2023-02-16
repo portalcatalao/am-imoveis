@@ -11,17 +11,19 @@ import { LinkButton, TopCard } from './styles'
 
 interface Props {
     properties: IProperty[];
+    title: string,
+    p: string
 }
 
-export function Featured({ properties }: Props) {
+export function Featured({ properties, title, p }: Props) {
     return (
-        <Section bg="#f9f9f9" p="0 0 2rem 0">
-            <GridLayout p="2rem 0">
+        <Section bg="#f9f9f9" p={p}>
+            <GridLayout>
                 <TopCard>
                     <div>
-                        <Title cl={theme.colors.gray_100} fz={"1.8rem"}>Imóveis em destaque</Title>
+                        <Title cl={theme.colors.gray_100} fz={"1.8rem"}>{title}</Title>
                         <Subtitle cl={theme.colors.gray_100} fz={"1rem"}>
-                            Excelentes imóveis disponíveis para você conhecer.
+                            Excelentes imóveis disponíveis para você conhecer
                             <LinkButton href="/imoveis">Ver todos<FiChevronRight /></LinkButton>
                         </Subtitle>
                     </div>
@@ -32,7 +34,6 @@ export function Featured({ properties }: Props) {
                     spaceBetween={18}
                     slidesPerView={'auto'}
                     navigation={true}
-                    className="cardproperty"
                 >
                     {properties.map(property =>
                         <SwiperSlide>
