@@ -99,7 +99,6 @@ export const Title = styled.h1<Props>`
     font-size: ${({ fz }) => fz ?? "1.2rem"};
 
     @media (max-width: 720px) {
-        padding: 10px;
         font-size: 28px;
     }
 `
@@ -111,7 +110,6 @@ export const Subtitle = styled.p<Props>`
     margin-bottom: 1rem;
 
     @media (max-width: 720px) {
-        padding: 10px;
         font-size: 18px;
     }
 `
