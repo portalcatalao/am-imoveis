@@ -69,7 +69,7 @@ export const Card = styled.div`
     margin: 10px 0;
     padding: 20px;
     border-radius: ${({ theme }) => theme.borders.main};
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
 
     h2 {
         font-size: 18px;

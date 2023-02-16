@@ -147,7 +147,6 @@ export const Description = styled.div`
 export const ContentDescription = styled.div`
     background: #fff;
     padding: 28px;
-
     display: flex;
     flex-direction: column;
     row-gap: 8px;

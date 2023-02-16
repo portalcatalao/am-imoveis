@@ -3,16 +3,17 @@ import Link from 'next/link';
 
 export const Container = styled(Link)`
     position: relative;
-    display: flex;
     width: 300px;
     height: 300px;
-    flex-flow: wrap;
     color: #fff;
     border: 0.5px solid #ebebeb;
     border-radius: ${({ theme }) => theme.borders.main};
     background: ${({ theme }) => theme.colors.white};
-    flex-grow: 1;     
-    flex-shrink: 1; 
+    display: flex;
+    
+    @media(max-width: 720px) {
+        flex-grow: 1;     
+    }
 
     img {
         transition: transform .3s

@@ -29,7 +29,7 @@ export const Content = styled.div`
     width: 100%;
     grid-gap: 1.2rem;
 
-    @media (max-width: 1020px) {
+    @media (max-width: 1319px) {
         grid-template-columns: 1fr;
     }
 `
@@ -84,10 +84,6 @@ export const Properties = styled.div`
 
     @media(max-width: 720px) {
         justify-content: center;
-
-        a {
-            
-        }
     }
 
     @media(max-width: 1310px) {

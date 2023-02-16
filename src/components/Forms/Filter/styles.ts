@@ -21,7 +21,7 @@ export const ShowFilter = styled.div`
     grid-template-columns: 46px 1fr;
     cursor: pointer;
     
-    @media(max-width: 1020px) {
+    @media(max-width: 1319px) {
         display: grid;
     }
 
@@ -104,7 +104,7 @@ export const CloseFilter = styled.div`
         border-radius: ${({ theme }) => theme.borders.main};
     }
 
-    @media(min-width: 1020px) {
+    @media(min-width: 1320px) {
         display: none!important;
     }
 `
