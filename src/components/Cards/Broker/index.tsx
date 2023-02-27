@@ -1,9 +1,10 @@
 import Image, { StaticImageData } from "next/image";
-import { Body, ButtonIcon, Container, Footer, Header, Overlay, Subtitle, Thumbnail, Title } from "./styles";
+import { Body, ButtonIcon, Container, Footer, Header, LinkButton, Overlay, Subtitle, Thumbnail, Title } from "./styles";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 
 interface Props {
+    id?: string,
     src?: string | StaticImageData,
     whatsapp?: string,
     instagram?: string,
@@ -13,7 +14,7 @@ interface Props {
     subtitle?: string,
 }
 
-export function CardAgents({ src, whatsapp, facebook, instagram, youtube, title, subtitle }: Props) {
+export function CardAgents({ id, src, whatsapp, facebook, instagram, youtube, title, subtitle }: Props) {
     return (
         <Container>
             <Header>
@@ -24,28 +25,7 @@ export function CardAgents({ src, whatsapp, facebook, instagram, youtube, title,
                         layout="fill"
                     />
                     <Overlay>
-                        {whatsapp && <ButtonIcon>
-                            <Link href={whatsapp}>
-                                <FaWhatsapp />
-                            </Link>
-                        </ButtonIcon>
-                        }
-                        {facebook && <ButtonIcon>
-                            <Link href={facebook}>
-                                <FaFacebookF />
-                            </Link>
-                        </ButtonIcon>}
-                        {instagram && <ButtonIcon>
-                            <Link href={instagram}>
-                                <FaInstagram />
-                            </Link>
-                        </ButtonIcon>
-                        }
-                        {youtube && <ButtonIcon>
-                            <Link href={youtube}>
-                                <FaYoutube />
-                            </Link>
-                        </ButtonIcon>}
+                        <LinkButton href={`/imoveis/corretores/${id}`}>Ver imóveis deste corretor</LinkButton>
                     </Overlay>
                 </Thumbnail>
             </Header>

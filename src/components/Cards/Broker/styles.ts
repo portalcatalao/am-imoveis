@@ -1,14 +1,16 @@
 import styled from "styled-components";
+import Link from 'next/link';
+
 
 export const Container = styled.div`
 `
 export const Header = styled.div`
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 `
 export const Thumbnail = styled.div`
     width: 203px;
     height: 240px;
-    border-radius: ${({ theme }) => theme.borders.main};
+    border-radius: ${({ theme }) => theme.borders.third};
     overflow: hidden;
     position: relative;
 
@@ -22,12 +24,12 @@ export const Overlay = styled.div`
     width: 100%;
     height: fit-content;
     background: rgba(8, 19, 29, .8);
-    opacity: 0;
 
     position: absolute;
     bottom: 0;
     left: 0;
-
+    
+    opacity: 0;
     transition: .3s;
 
     display: flex;
@@ -36,6 +38,13 @@ export const Overlay = styled.div`
     padding: 1rem 0.5rem ;
     gap: 20px;
 `
+
+export const LinkButton = styled(Link)`
+    color: #fff!important;
+    text-align: center;
+    font-size: 14px;
+`
+
 export const ButtonIcon = styled.button`
     background: transparent;
     border: 0;
@@ -50,7 +59,6 @@ export const ButtonIcon = styled.button`
     }
 `
 export const Body = styled.div`
-
 `
 export const Title = styled.h2`
     font-size: 1rem;
@@ -58,7 +66,6 @@ export const Title = styled.h2`
     color: ${({ theme }) => theme.colors.gray_200};
 
     transition: .3s;
-    margin-bottom: .25rem;
 `
 export const Subtitle = styled.span`
     text-align: center;
@@ -86,4 +93,8 @@ export const Stars = styled.div`
         font-weight: 300;
         color: ${({ theme }) => theme.colors.gray_200};
     }
+`
+
+export const Button = styled.div`
+
 `

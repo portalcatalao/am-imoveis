@@ -9,7 +9,7 @@ import Link from "next/link";
 import {
     Container, Header, Subtitle, Title, Col, Row, Price, ButtonIcon, Gallery, MainThumbnail, Thumbnail,
     Thumbs, Description, ContentDescription, Tags, TitleDescription, Features, Divisor, Video, Contact,
-    ContactAgent, TextAgent, SendMessage, TitleRelacionados
+    ContactAgent, TextAgent, SendMessage, TitleRelacionados, LinkButton
 } from "./styles";
 import { GalleryView } from "../../components/GalleryView";
 import { getUrl } from "../../helpers/functions";
@@ -176,8 +176,8 @@ export default function Property({ property, properties }) {
                                 </ContactAgent>
                                 <Divisor></Divisor>
                                 <SendMessage>
-                                    <Link href="#">Entrar em contato</Link>
-                                    <Link href="#">Agendar visita</Link>
+                                    <LinkButton href="#" fill={true}>Entrar em contato</LinkButton>
+                                    <LinkButton href="#">Agendar visita</LinkButton>
                                 </SendMessage>
                             </Contact>
                         }
@@ -201,8 +201,8 @@ export default function Property({ property, properties }) {
                                 </ContactAgent>
                                 <Divisor></Divisor>
                                 <SendMessage>
-                                    <Link href="#">Entrar em contato</Link>
-                                    <Link href="#">Agendar visita</Link>
+                                    <LinkButton href="#" fill={true}>Entrar em contato</LinkButton>
+                                    <LinkButton href="#">Agendar visita</LinkButton>
                                 </SendMessage>
                             </Contact>
                         }

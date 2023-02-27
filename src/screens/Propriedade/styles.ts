@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 
@@ -341,6 +342,14 @@ export const SendMessage = styled.form`
             color: ${({ theme }) => theme.colors.white};
         }
     }
+`
+interface ILinkButton {
+    fill?: boolean
+}
+export const LinkButton = styled(Link) <ILinkButton>`
+    background: ${({ fill, theme }) => fill && theme.colors.primary}!important;
+    color: ${({ fill, theme }) => fill && theme.colors.white}!important;
+    border: ${({ fill, theme }) => fill && 'none'}!important;
 `
 export const TitleRelacionados = styled.h2`
     width: 100%;

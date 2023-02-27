@@ -1,11 +1,12 @@
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { getUrl } from "../../../helpers/functions";
 import { GridLayout, Section, Subtitle, Title } from "../../../styles/globals";
 import theme from "../../../styles/theme";
 import { CardAgents } from "../../Cards/Broker";
 import { } from './styles'
 
-export function Brokers() {
+export function Brokers({ realtors }) {
     return (
         <Section bg="#f9f9f9">
             <GridLayout p="2rem 0">
@@ -19,72 +20,20 @@ export function Brokers() {
                     navigation={true}
                     className="cardproperty"
                 >
-                    <SwiperSlide>
-                        <CardAgents
-                            src="https://creativelayers.net/themes/findhouse-html/images/team/6.jpg"
-                            title="Sebastiana Oliveira"
-                            subtitle="Especialista em vendas"
-                            whatsapp="www.whatsapp.com.br"
-                            facebook="www.facebook.com.br"
-                            instagram="www.instagram.com.br"
-                            youtube="www.youtube.com.br"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardAgents
-                            src="https://creativelayers.net/themes/findhouse-html/images/team/10.jpg"
-                            title="Sebastião Ferreira"
-                            subtitle="Especialista em aluguéis"
-                            whatsapp="www.whatsapp.com.br"
-                            facebook="www.facebook.com.br"
-                            instagram="www.instagram.com.br"
-                            youtube="www.youtube.com.br"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardAgents
-                            src="https://creativelayers.net/themes/findhouse-html/images/team/8.jpg"
-                            title="Maria Silveira"
-                            subtitle="Especialista em vendas"
-                            whatsapp="www.whatsapp.com.br"
-                            facebook="www.facebook.com.br"
-                            instagram="www.instagram.com.br"
-                            youtube="www.youtube.com.br"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardAgents
-                            src="https://creativelayers.net/themes/findhouse-html/images/team/6.jpg"
-                            title="Sebastiana Oliveira"
-                            subtitle="Especialista em vendas"
-                            whatsapp="www.whatsapp.com.br"
-                            facebook="www.facebook.com.br"
-                            instagram="www.instagram.com.br"
-                            youtube="www.youtube.com.br"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardAgents
-                            src="https://creativelayers.net/themes/findhouse-html/images/team/10.jpg"
-                            title="Sebastião Ferreira"
-                            subtitle="Especialista em aluguéis"
-                            whatsapp="www.whatsapp.com.br"
-                            facebook="www.facebook.com.br"
-                            instagram="www.instagram.com.br"
-                            youtube="www.youtube.com.br"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CardAgents
-                            src="https://creativelayers.net/themes/findhouse-html/images/team/8.jpg"
-                            title="Maria Silveira"
-                            subtitle="Especialista em vendas"
-                            whatsapp="www.whatsapp.com.br"
-                            facebook="www.facebook.com.br"
-                            instagram="www.instagram.com.br"
-                            youtube="www.youtube.com.br"
-                        />
-                    </SwiperSlide>
+                    {realtors.map(realtor =>
+                        <SwiperSlide>
+                            <CardAgents
+                                id={realtor.id}
+                                src={getUrl(realtor.avatar)}
+                                title={realtor.name}
+                                subtitle="Especialista"
+                                whatsapp={realtor.cellPhone}
+                                facebook="www.facebook.com.br"
+                                instagram="www.instagram.com.br"
+                                youtube="www.youtube.com.br"
+                            />
+                        </SwiperSlide>)
+                    }
                 </Swiper>
             </GridLayout>
         </Section>

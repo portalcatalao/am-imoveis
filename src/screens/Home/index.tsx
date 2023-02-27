@@ -5,7 +5,7 @@ import { Localities } from "../../components/SectionsHome/Localities";
 import { Brokers } from "../../components/SectionsHome/Brokers";
 import { News } from '../../components/SectionsHome/News';
 
-export function Home({ properties }) {
+export function Home({ properties, realtors }) {
     return (
         <>
             <BannerHome
@@ -15,16 +15,11 @@ export function Home({ properties }) {
             <Featured
                 title="Imóveis em destaque"
                 properties={properties}
-                p="2rem 0"
-            />
-            <Featured
-                title="Imóveis recentemente adicionados"
-                properties={properties}
-                p="0 0 4rem 0"
+                p="2rem 2rem 3rem 2rem"
             />
             <PropertyTypes />
             <Localities />
-            <Brokers />
+            <Brokers realtors={realtors} />
             <News />
         </>
     )

@@ -19,7 +19,6 @@ interface Props {
 }
 
 export function CardProperty({ src, forRent, forSell, price, title, city, bed, bath, car, area, id }: Props) {
-    console.log(forRent);
     return (
         <Container href={`/imoveis/teste/${id}`}>
             <Thumbnail>
