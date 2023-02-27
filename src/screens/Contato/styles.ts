@@ -5,7 +5,7 @@ export const Container = styled.div`
     min-height: 70vh;
 `
 export const Content = styled(GridLayout)`
-    margin-top: 2rem;
+    padding: 2rem 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

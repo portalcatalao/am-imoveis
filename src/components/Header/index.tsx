@@ -27,8 +27,8 @@ export function Header({ top }) {
 
                 <Links open={open}>
                     <li><Link href={'/'}>Home</Link></li>
-                    <li><Link href={'/institucional'}>Institucional</Link></li>
                     <li><Link href={'/imoveis'}>Imóveis</Link></li>
+                    <li><Link href={'/institucional'}>Institucional</Link></li>
                     <li><Link href={'/servicos'}>Serviços</Link></li>
                     <li><Link href={'/contato'}>Contato</Link></li>
                 </Links>
