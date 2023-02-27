@@ -7,6 +7,7 @@ export const Container = styled.div`
 export const Content = styled(GridLayout)`
     padding: 2rem 0;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
