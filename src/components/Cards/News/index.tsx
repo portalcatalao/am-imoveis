@@ -13,7 +13,6 @@ export function CardNews({ src, title, description }: Props) {
             <CardHeader>
                 <Thumbnail>
                     <Image src={src} alt="" layout="fill" />
-                    <Mask />
                 </Thumbnail>
             </CardHeader>
             <CardBody>

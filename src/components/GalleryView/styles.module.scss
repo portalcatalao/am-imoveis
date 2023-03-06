@@ -1,9 +1,13 @@
 #swiper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden !important;
+    position: unset !important;
+}
+#swiper_slide {
+    width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#swiper_slide {
-    width: 100% !important;
 }

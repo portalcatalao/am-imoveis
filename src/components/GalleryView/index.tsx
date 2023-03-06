@@ -1,63 +1,53 @@
-import Image from 'next/image';
-import { createGlobalStyle } from 'styled-components'
-import { Navigation } from 'swiper';
-import { Swiper } from 'swiper/react';
-import { SwiperSlide } from 'swiper/react';
-import { GridLayout } from '../../styles/globals';
-import { Container, Thumbnail } from './styles'
+import { useState, useEffect } from "react";
+import { createGlobalStyle } from "styled-components";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Container, ButtonClose } from "./styles";
+import styles from "./styles.module.scss";
+import { GridLayout } from "../../styles/globals";
+import { Slide } from "./components/Slide";
+import { PrevButton } from "./components/PrevButton";
+import { NextButton } from "./components/NextButton";
+import { FiX } from "react-icons/fi";
+import { HandleIndex } from "./components/HandleIndex";
 
-import styles from './styles.module.scss'
-
-export function GalleryView() {
-    const GlobalStyles = createGlobalStyle`
+export function GalleryView({ close, active, show, images }) {
+    const [state, setState] = useState('start');
+    const GlobalStyle = createGlobalStyle`
         html {
-            overflow: hidden!important;
+            overflow-y: hidden !important;
         }
-    `;
-
+    `
     return (
-        <Container>
-            <GlobalStyles />
-
-            <GridLayout
-                style={{ display: "flex", alignItems: "center" }}
-            >
+        <Container style={{
+            visibility: !show ? 'hidden' : 'visible'
+        }}>
+            {show && <GlobalStyle />}
+            <ButtonClose onClick={close}><FiX /></ButtonClose>
+            <GridLayout style={{
+                display: "flex",
+                alignItems: "center"
+            }}>
                 <Swiper
-                    modules={[Navigation]}
-                    navigation={true}
                     id={styles.swiper}
+                    pagination={{
+                        type: "fraction",
+                    }}
+                    modules={[Pagination, Navigation]}
+                    onSlideChange={(swiper) => {
+                        { swiper.isBeginning && setState('start') }
+                        { swiper.isEnd && setState('end') }
+                        { !swiper.isBeginning && !swiper.isEnd && setState('progress') }
+                    }}
                 >
-                    <SwiperSlide id={styles.swiper_slide}>
-                        <Thumbnail>
-                            <Image
-                                src={"https://creativelayers.net/themes/findhouse-html/images/property/fp21.jpg"}
-                                alt=""
-                                height={600}
-                                width={600}
-                            />
-                        </Thumbnail>
-                    </SwiperSlide>
-                    <SwiperSlide id={styles.swiper_slide}>
-                        <Thumbnail>
-                            <Image
-                                src={"https://creativelayers.net/themes/findhouse-html/images/property/fp21.jpg"}
-                                alt=""
-                                height={600}
-                                width={600}
-                            />
-                        </Thumbnail>
-                    </SwiperSlide>
-                    <SwiperSlide id={styles.swiper_slide}>
-                        <Thumbnail>
-                            <Image
-                                src={"https://creativelayers.net/themes/findhouse-html/images/property/fp21.jpg"}
-                                alt=""
-                                height={600}
-                                width={600}
-                            />
-                        </Thumbnail>
-                    </SwiperSlide>
-
+                    <HandleIndex active={active} show={show} />
+                    {images.map((item, index) => (
+                        <SwiperSlide key={index} id={styles.swiper_slide}>
+                            <Slide image={item} />
+                        </SwiperSlide>
+                    ))}
+                    <PrevButton disabled={state === 'start' && true} />
+                    <NextButton disabled={state === 'end' || images.length < 2 ? true : false} />
                 </Swiper>
             </GridLayout>
         </Container>

@@ -101,3 +101,17 @@ a {
     padding: 0 10px;
   }
 }
+
+.swiper-pagination-fraction {
+  position: fixed !important;
+  bottom: 16px !important;
+  right: 16px !important;
+  left: unset !important;
+
+  width: fit-content !important;
+  background: #1d1d1dd0;
+  color: #fff;
+
+  padding: .25rem .5rem;
+  border-radius: 4px;
+}

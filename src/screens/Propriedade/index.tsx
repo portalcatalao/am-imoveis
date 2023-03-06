@@ -15,13 +15,31 @@ import { GalleryView } from "../../components/GalleryView";
 import { getUrl } from "../../helpers/functions";
 import { maskPrice } from "../../helpers/mask";
 import { Featured } from "../../components/SectionsHome/Featured";
+import { useEffect, useState } from "react";
 
 export default function Property({ property, properties }) {
+    const [showGallery, setShowGallery] = useState(false);
+    const [active, setActive] = useState(0);
+    const [images, setImages] = useState([]);
+
+    const handleShowGallery = (index) => {
+        setActive(index ?? 0);
+        setShowGallery(true);
+    }
+
+    useEffect(() => {
+        if (property) {
+            { property.thumbnail && setImages([property.thumbnail]) }
+            { property.images && setImages([property.thumbnail, ...property.images]) }
+        }
+    }, [property]);
+
     return (
         <Container>
             <GridLayout p="0" ai="center">
+                {images.length > 0 && <GalleryView close={() => setShowGallery(false)} active={active} show={showGallery} images={images} />}
                 <Gallery>
-                    <MainThumbnail>
+                    <MainThumbnail onClick={() => handleShowGallery(0)}>
                         <Image
                             src={getUrl(property.thumbnail)}
                             alt=""
@@ -31,7 +49,7 @@ export default function Property({ property, properties }) {
                     {property.images &&
                         <Thumbs>
                             {property.images[0] &&
-                                <Thumbnail>
+                                <Thumbnail onClick={() => handleShowGallery(1)}>
                                     <Image
                                         src={getUrl(property.images[0])}
                                         alt=""
@@ -40,7 +58,7 @@ export default function Property({ property, properties }) {
                                 </Thumbnail>
                             }
                             {property.images[1] &&
-                                <Thumbnail>
+                                <Thumbnail onClick={() => handleShowGallery(2)}>
                                     <Image
                                         src={getUrl(property.images[1])}
                                         alt=""
@@ -49,7 +67,7 @@ export default function Property({ property, properties }) {
                                 </Thumbnail>
                             }
                             {property.images[2] &&
-                                <Thumbnail>
+                                <Thumbnail onClick={() => handleShowGallery(3)}>
                                     <Image
                                         src={getUrl(property.images[2])}
                                         alt=""
@@ -58,7 +76,7 @@ export default function Property({ property, properties }) {
                                 </Thumbnail>
                             }
                             {property.images[3] &&
-                                <Thumbnail>
+                                <Thumbnail onClick={() => handleShowGallery(4)}>
                                     <Image
                                         src={getUrl(property.images[3])}
                                         alt=""
@@ -67,7 +85,7 @@ export default function Property({ property, properties }) {
                                 </Thumbnail>
                             }
                             {property.images[4] &&
-                                <Thumbnail>
+                                <Thumbnail onClick={() => handleShowGallery(5)}>
                                     <Image
                                         src={getUrl(property.images[4])}
                                         alt=""
@@ -76,7 +94,7 @@ export default function Property({ property, properties }) {
                                 </Thumbnail>
                             }
                             {property.images[5] &&
-                                <Thumbnail>
+                                <Thumbnail onClick={() => handleShowGallery(6)}>
                                     <Image
                                         src={getUrl(property.images[5])}
                                         alt=""
