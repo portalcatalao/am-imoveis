@@ -7,6 +7,7 @@ interface ListPros {
 export const Container = styled.div<ListPros>`
     display: flex;
     width: 100%;
+    position: relative;
     
     ${({ show }) => show && css`
         z-index: 999;
@@ -41,6 +42,8 @@ export const Button = styled.button<ButtonProps>`
     justify-content: space-between;
     align-items: center;
 
+    text-align: start;
+
     svg {
         font-size: 1.2rem;
         color: ${({ theme }) => theme.colors.gray_200};
@@ -68,6 +71,9 @@ export const InputText = styled.input`
     }
 `
 export const List = styled.ul<ListPros>`
+    max-height: 200px;
+    overflow-y: auto;
+
     position: absolute;
     top: 95%;
     right: .75rem;

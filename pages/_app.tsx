@@ -10,6 +10,8 @@ import theme from '../src/styles/theme'
 import { ThemeProvider } from 'styled-components'
 import { Header } from '../src/components/Header'
 import { Footer } from '../src/components/Footer';
+import { ConfigProvider } from '../src/contexts/ConfigContext';
+import { FilterProvider } from '../src/contexts/FilterContext';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [top, setTop] = useState(true);
@@ -38,9 +40,13 @@ export default function App({ Component, pageProps }: AppProps) {
       scrollBehavior: 'smooth',
     }}>
       <ThemeProvider theme={theme}>
-        <Header top={top} />
-        <Component {...pageProps} />
-        <Footer />
+        <ConfigProvider>
+          <FilterProvider>
+            <Header top={top} />
+            <Component {...pageProps} />
+            <Footer />
+          </FilterProvider>
+        </ConfigProvider>
       </ThemeProvider>
     </div>
   )

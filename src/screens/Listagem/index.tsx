@@ -15,15 +15,15 @@ import { getUrl } from '../../helpers/functions';
 import { maskPrice } from '../../helpers/mask';
 import { IProperty } from '../../types/interfaces';
 import { Pagination } from '../../components/Pagination';
+import { useFilter } from '../../contexts/FilterContext';
 
-interface Props {
-    properties: IProperty[];
-    total: number,
-    page: number
-}
 
-export default function Listing({ properties, total, page }: Props) {
-    const [pages, setPages] = useState(1);
+export default function Listing({ filter }) {
+    const { fillFilter, results, total } = useFilter();
+    
+    useEffect(() => {
+        if (filter) fillFilter(filter);
+    }, []);
 
     return (
         <Container>
@@ -37,7 +37,7 @@ export default function Listing({ properties, total, page }: Props) {
 
                     <Results>
                         <Top>
-                            <h3>202 imóveis encontrados</h3>
+                            <h3>{total} imóveis encontrados</h3>
                             <Right>
                                 <span>Ordernar:</span>
                                 <InputSelect placeholder="Mais recentes" value={undefined} onChange={undefined} />
@@ -45,7 +45,7 @@ export default function Listing({ properties, total, page }: Props) {
                         </Top>
 
                         <Properties>
-                            {properties?.map(property =>
+                            {results?.map(property =>
                                 <CardProperty
                                     src={getUrl(property.thumbnail)}
                                     forSell={property.adType === 'venda'}
@@ -56,14 +56,14 @@ export default function Listing({ properties, total, page }: Props) {
                                     bed={property.numberRooms}
                                     bath={property.numberBathrooms}
                                     car={property.numberGarages}
-                                    area={property.area}
+                                    area={property.totalArea}
                                     id={property.id}
                                 />
                             )}
                         </Properties>
 
                         <Bot>
-                            <Pagination total={total} page={page} onChange={setPages} />
+                            <Pagination total={total} page={1} onChange={() => {}} />
                         </Bot>
                     </Results>
                 </Content>

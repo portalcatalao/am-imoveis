@@ -6,12 +6,13 @@ import { InputSelect } from "../../Forms/InputSelect";
 import { Background, Banner, ButtonScroll, ButtonSubmit, ContentBanner, Form, Input, Subtitle, Tab, Tabs, Title, Type } from "./styles";
 import BannerBackground from "../../../../public/images/banner-home1.jpg"
 import CaixaAqui from "../../../../public/images/caixa.svg"
+import { useFilter } from "../../../contexts/FilterContext";
 
 export function BannerHome() {
+    const {adType} = useFilter();
     const [bannerHeight, setBannerHeight] = useState(0);
     const bannerRef = useRef(null);
     const [adTypeActive, setAdTypeActive] = useState(0);
-    const adType = useSelect();
 
     const handleScrollTo = (e) => {
         const body = document.querySelector('body');

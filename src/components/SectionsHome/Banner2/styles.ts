@@ -129,7 +129,8 @@ export const Form = styled.form`
     }
 `
 export const Type = styled.div`
-    width: 180px;
+    //width: 180px;
+    flex: 1;
     border-right: 1px solid #d3d3d3;
     
     button {
@@ -140,8 +141,6 @@ export const Type = styled.div`
     @media (max-width: 720px) {
         border: none;
         width: 100%;
-
-        
     }
 `
 export const ButtonScroll = styled.button`
