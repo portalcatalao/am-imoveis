@@ -47,7 +47,7 @@ export function Featured({ properties, title, p }: Props) {
                                 bed={property.numberRooms}
                                 bath={property.numberBathrooms}
                                 car={property.numberGarages}
-                                area={property.area}
+                                area={property.totalArea}
                                 id={property.id}
                             />
                         </SwiperSlide>
