@@ -11,7 +11,6 @@ import {
     Input, Search, Subtitle, Tab, Tabs, TitleMain, Type, Text
 } from "./styles";
 
-import CaixaAqui from "../../../../public/images/caixa.svg"
 import BannerBackground from "../../../../public/images/banner-home2.jpg"
 
 export function BannerHome({ title, subtitle }) {
@@ -74,8 +73,6 @@ export function BannerHome({ title, subtitle }) {
                         </Search>
                     </Text>
                 </GridLayout>
-
-                <Image src={CaixaAqui} alt="Caixa Aqui" />
             </ContentBanner>
         </Container>
     )

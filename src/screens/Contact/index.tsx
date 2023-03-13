@@ -4,7 +4,7 @@ import { useForm } from "../../hooks/useForm";
 import { ContactInfo, Button, Column, Container, Content, Form, Subtitle, Title, Info, Data, Social } from "./styles";
 import { HeaderPage } from "../../components/Breadcrumb";
 
-import { FaFacebook, FaInstagram } from "react-icons/fa"
+import { FaAddressBook, FaFacebook, FaInstagram, FaLocationArrow, FaYoutube } from "react-icons/fa"
 import { MdEmail, MdPhone } from "react-icons/md"
 import Link from "next/link";
 import { useConfig } from "../../contexts/ConfigContext";
@@ -70,11 +70,13 @@ export default function Contact() {
                         <Data>
                             {config?.phone && <Link href={`tel:${formatPhoneNumber(config?.phone)}`}><MdPhone />{config?.phone}</Link>}
                             {config?.email && <Link href="mailto:br"><MdEmail />{config.email}</Link>}
+                            {config?.address && <Link href="mailto:br"><FaLocationArrow />{config.address}</Link>}
                         </Data>
 
                         <Social>
                             {config?.facebook && <Link target="_blank" href={config.facebook}><FaFacebook />Facebook</Link>}
                             {config?.instagram && <Link target="_blank" href={config.instagram}><FaInstagram />Instagram</Link>}
+                            {config?.youtube && <Link target="_blank" href={config.youtube}><FaYoutube />Youtube</Link>}
                         </Social>
                     </Info>
 

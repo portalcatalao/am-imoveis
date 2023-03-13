@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled.footer`
@@ -45,7 +46,7 @@ export const Social = styled.div`
     align-items: center;
     gap: 1.2rem;
 `
-export const ButtonIcon = styled.button`
+export const ButtonIcon = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;

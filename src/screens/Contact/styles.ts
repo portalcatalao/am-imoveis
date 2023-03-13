@@ -63,6 +63,7 @@ export const ContactInfo = styled.div`
 export const Info = styled.div`
     display: flex;
     justify-content: space-between;
+    gap: 18px;
 
     a {
         display: flex;
@@ -72,6 +73,11 @@ export const Info = styled.div`
         :hover {
             color: ${({ theme }) => theme.colors.primary};
         }
+    }
+
+    @media(max-width: 720px) {
+        flex-direction: column;
+        padding: 2rem 0 1rem 0;
     }
 `
 

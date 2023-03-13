@@ -1,10 +1,21 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { FiChevronRight } from "react-icons/fi";
+import { useConfig } from "../../contexts/ConfigContext";
 import { Col, GridLayout, Row } from "../../styles/globals";
 import { Container, ContentPrimary, ContentSecondary, Title, Text, Social, ButtonIcon, Form, Input, Button } from "./styles";
 
 export function Footer() {
+    const { config } = useConfig()
+
+    const phone = config?.phone;
+    const whatsapp = config?.whatsapp;
+    const email = config?.email;
+    const instagram = config?.instagram;
+    const facebook = config?.facebook;
+    const youtube = config?.youtube;
+    const address = config?.address;
+
     return (
         <Container>
             <ContentPrimary>
@@ -19,27 +30,25 @@ export function Footer() {
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
                             <Title>Acesso rápido</Title>
-                            <Link href={'/'}>Sobre nós</Link>
-                            <Link href={'/'}>Serviços que oferecemos</Link>
-                            <Link href={'/'}>Imóveis disponíveis</Link>
-                            <Link href={'/'}>Entre em contato</Link>
+                            <Link href={'/quem-somos'}>Sobre nós</Link>
+                            <Link href={'/servicos'}>Serviços que oferecemos</Link>
+                            <Link href={'/imoveis/filter?'}>Imóveis disponíveis</Link>
+                            <Link href={'/contato'}>Entre em contato</Link>
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
                             <Title>Contate-nos</Title>
-                            <Link href={'/'}>contato@amimoveis.com.br</Link>
-                            <Link href={'/'}>Av. Vinte de Agosto, 1062</Link>
-                            <Link href={'/'}>Centro, Catalão - GO</Link>
-                            <Link href={'/'}>(64) 3442-5200 </Link>
+                            <Link href={'/'}>{email}</Link>
+                            <Link href={'/'}>{address}</Link>
+                            <Link href={'/'}>{phone}</Link>
                         </Col>
                         <Col col={3} p={"2rem 1rem"}>
                             <div>
                                 <Col col={12} p={" 0 0 2.5rem 0"}>
                                     <Title>Siga-nos</Title>
                                     <Social>
-                                        <ButtonIcon><FaWhatsapp /></ButtonIcon>
-                                        <ButtonIcon><FaFacebookF /></ButtonIcon>
-                                        <ButtonIcon><FaInstagram /></ButtonIcon>
-                                        <ButtonIcon><FaYoutube /></ButtonIcon>
+                                        {facebook && <ButtonIcon target="_blank" href={facebook}><FaFacebookF /></ButtonIcon>}
+                                        {instagram && <ButtonIcon target="_blank" href={instagram}><FaInstagram /></ButtonIcon>}
+                                        {youtube && <ButtonIcon target="_blank" href={youtube}><FaYoutube /></ButtonIcon>}
                                     </Social>
                                 </Col>
                                 <Col col={12}>
