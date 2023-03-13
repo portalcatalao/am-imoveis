@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-
 export const Container = styled.div`
     width: 100%;
     margin-top: 72px;
@@ -170,9 +169,10 @@ interface ILinkButton {
 }
 
 export const LinkButton = styled(Link) <ILinkButton>`
-    background: ${({ fill, theme }) => fill && theme.colors.primary}!important;
+    background: ${({ fill, theme }) => fill && theme.colors.dark}!important;
     color: ${({ fill, theme }) => fill && theme.colors.white}!important;
     border: ${({ fill }) => fill && 'none'}!important;
+    width: 160px!important;
 `
 
 export const Properties = styled.div`
