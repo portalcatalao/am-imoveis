@@ -12,6 +12,8 @@ import { Header } from '../src/components/Header'
 import { Footer } from '../src/components/Footer';
 import { ConfigProvider } from '../src/contexts/ConfigContext';
 import { FilterProvider } from '../src/contexts/FilterContext';
+import Head from 'next/head';
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [top, setTop] = useState(true);

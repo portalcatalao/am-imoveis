@@ -12,15 +12,17 @@ import {
     ContactAgent, TextAgent, SendMessage, TitleRelacionados, LinkButton
 } from "./styles";
 import { GalleryView } from "../../components/GalleryView";
-import { getUrl } from "../../helpers/functions";
+import { getUrl, normalizeString } from "../../helpers/functions";
 import { maskPrice } from "../../helpers/mask";
 import { Properties } from "../../components/SectionsHome/Properties";
 import { useEffect, useState } from "react";
+import { getImmobileTitleCard } from "../../helpers/getImmobileTitle";
 
 export default function PropertyView({ property, properties }) {
     const [showGallery, setShowGallery] = useState(false);
     const [active, setActive] = useState(0);
     const [images, setImages] = useState([]);
+    const [shareData, setShareData] = useState(null);
 
     const handleShowGallery = (index) => {
         setActive(index ?? 0);
@@ -31,8 +33,16 @@ export default function PropertyView({ property, properties }) {
         if (property) {
             { property.thumbnail && setImages([property.thumbnail]) }
             { property.images && setImages([property.thumbnail, ...property.images]) }
+            var url = window.location.hostname;
+            setShareData({
+                text: getImmobileTitleCard(property) + ', ' + property.address.city + ' - ' + property.address.state + ' - Kelly Imóveis',
+                title: getImmobileTitleCard(property) + ', ' + property.address.city + ' - ' + property.address.state + ' - Kelly Imóveis',
+                url: url + `/imovel/${property.adType}/${normalizeString(property.address.city)}/${normalizeString(property.address.district) ?? ''}/${property.id}`,
+            })
+
         }
     }, [property]);
+
 
     return (
         <Container>
@@ -118,7 +128,7 @@ export default function PropertyView({ property, properties }) {
                     </Col>
                     <Row>
                         <Price>R$ {maskPrice(property.value)}</Price>
-                        <ButtonIcon>Compartilhar <HiShare /></ButtonIcon>
+                        <ButtonIcon onClick={async () => await navigator.share(shareData)}>Compartilhar <HiShare /></ButtonIcon>
                     </Row>
                 </Header>
             </GridLayout>
@@ -128,7 +138,7 @@ export default function PropertyView({ property, properties }) {
                     <Description>
                         <ContentDescription>
                             <Tags>
-                                <span>Área: {property.area}m²</span>
+                                <span>Área Total: {property.totalArea} m²</span>
                                 <span><IoBedSharp />Quartos: {property.numberRooms}</span>
                                 <span><FaBath />Banheiros: {property.numberBathrooms}</span>
                                 <span><FaCar />Garagem: {property.numberGarages} vaga (s)</span>
