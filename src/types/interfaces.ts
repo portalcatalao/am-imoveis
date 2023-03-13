@@ -125,6 +125,7 @@ export interface IConfig {
     metaDescription?: string;
     propertyAddressShow?: boolean;
     realEstate?: IRealEstate;
+    address?: string;
 }
 
 interface IBannerType {

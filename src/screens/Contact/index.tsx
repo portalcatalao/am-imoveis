@@ -7,12 +7,29 @@ import { HeaderPage } from "../../components/Breadcrumb";
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { MdEmail, MdPhone } from "react-icons/md"
 import Link from "next/link";
+import { useConfig } from "../../contexts/ConfigContext";
 
 export default function Contact() {
+    const { config } = useConfig()
+
     const name = useForm();
     const email = useForm('email');
     const phone = useForm('phone');
     const message = useForm();
+
+    function formatPhoneNumber(phoneNumber: string): string {
+        // Remove todos os caracteres não numéricos do número de telefone
+        const cleanedPhoneNumber = phoneNumber.replace(/\D/g, "");
+
+        // Verifica se o número de telefone tem a quantidade de dígitos correta
+        if (cleanedPhoneNumber.length !== 10) {
+            throw new Error("O número de telefone deve ter 10 dígitos");
+        }
+
+        // Adiciona o código do país (+55) ao número de telefone e retorna o resultado
+        return `+55${cleanedPhoneNumber}`;
+    }
+
 
     return (
         <Container>
@@ -51,13 +68,13 @@ export default function Contact() {
                 <ContactInfo>
                     <Info>
                         <Data>
-                            <Link href="tel:+5511999999999"><MdPhone /> (64) 98142-9881</Link>
-                            <Link href="mailto:contato@amimoveis.com.br"><MdEmail />contato@amimoveis.com.br</Link>
+                            {config?.phone && <Link href={`tel:${formatPhoneNumber(config?.phone)}`}><MdPhone />{config?.phone}</Link>}
+                            {config?.email && <Link href="mailto:br"><MdEmail />{config.email}</Link>}
                         </Data>
 
                         <Social>
-                            <Link href="#"><FaFacebook />Facebook</Link>
-                            <Link href="#"><FaInstagram />Instagram</Link>
+                            {config?.facebook && <Link target="_blank" href={config.facebook}><FaFacebook />Facebook</Link>}
+                            {config?.instagram && <Link target="_blank" href={config.instagram}><FaInstagram />Instagram</Link>}
                         </Social>
                     </Info>
 
