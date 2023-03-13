@@ -93,7 +93,6 @@ export const Properties = styled.div`
     display: flex;
     flex-flow: wrap;
     gap: 1.2rem;
-    justify-content: space-between;
     width: 100%;
 
     a {

@@ -21,7 +21,7 @@ import { useRouter } from 'next/router';
 
 
 export default function PropertySearch({ filter }) {
-    const { fillFilter, results, total } = useFilter();
+    const { fillFilter, results, total, isFilted } = useFilter();
 
     useEffect(() => {
         if (filter) fillFilter(filter);
@@ -37,9 +37,12 @@ export default function PropertySearch({ filter }) {
                 <Content>
                     <Filter />
                     <Results>
-                        <ButtonClear  href="/imoveis/filter?" passHref>
-                            Limpar filtros
-                        </ButtonClear>
+                        {
+                            isFilted() &&
+                            <ButtonClear href="/imoveis/filter?" passHref>
+                                Limpar filtros
+                            </ButtonClear>
+                        }
                         <Top>
                             <h3>{total} imóveis encontrados</h3>
                             {/* <Right>

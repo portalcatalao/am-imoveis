@@ -37,6 +37,8 @@ interface FilterContextProps {
     results: IProperty[];
     setResults: any;
     total: number;
+
+    isFilted: () => boolean;
 }
 
 const FilterContext = createContext({} as FilterContextProps);
@@ -68,6 +70,15 @@ const FilterProvider = ({ children }: any) => {
     const [show, setShow] = useState(false);
     const type = useSelect();
     const adType = useSelect();
+
+    const { propertyType: typeQuery, adType: adTypeQuery, city: cityQuery, district: districtQuery } = router.query;
+
+    useEffect(() => {
+        findInitialProperties();
+    }, [typeQuery, adTypeQuery, cityQuery, districtQuery]);
+
+
+    const isFilted = () => typeQuery || adTypeQuery || cityQuery || districtQuery ? true : false;
 
     const handleShowFilter = () => setShow(!show);
 
@@ -134,7 +145,7 @@ const FilterProvider = ({ children }: any) => {
         }
     }
 
-    const findInitialProperties = async (filter: FilterProps) => {
+    const findInitialProperties = async (filter?: FilterProps) => {
         try {
             setLoading(true);
 
@@ -219,7 +230,8 @@ const FilterProvider = ({ children }: any) => {
             loading,
             results,
             setResults,
-            total
+            total,
+            isFilted,
         }}>
             {children}
         </FilterContext.Provider>

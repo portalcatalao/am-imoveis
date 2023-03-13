@@ -13,6 +13,7 @@ export function Home({ properties, realtors, tags, releases }) {
                 subtitle="Conte com os melhores imóveis para você escolher!"
             />
 
+
             <Properties
                 title="Imóveis em destaque"
                 properties={properties}
