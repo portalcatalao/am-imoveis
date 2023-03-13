@@ -8,7 +8,7 @@ export const Container = styled.div`
     padding-top: 2rem;
 
     @media(max-width: 720px) {
-        padding: 0;
+        padding-top: 1rem;
     }
 `
 export const Gallery = styled.div`

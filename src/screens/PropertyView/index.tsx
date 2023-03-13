@@ -228,15 +228,11 @@ export default function PropertyView({ property, properties }) {
                 </GridLayout>
             </Section>
 
-            <Section bg="#fff">
-                <GridLayout p="0rem 0 0" ai="center">
-                    <Properties
-                        properties={properties}
-                        title={"Imóveis relacionados"}
-                        p={""}
-                    />
-                </GridLayout>
-            </Section>
+            <Properties
+                properties={properties}
+                title={"Imóveis relacionados"}
+                p={""}
+            />
         </Container >
     )
 }
