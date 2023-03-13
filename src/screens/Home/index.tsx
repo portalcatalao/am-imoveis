@@ -20,6 +20,13 @@ export function Home({ properties, realtors, tags, releases }) {
                 backgroundColor="white"
             />
 
+            <PropertyTypes />
+
+            {
+                tags.length > 0 &&
+                <Localities tags={tags} />
+            }
+
             <Properties
                 title="Imóveis à venda"
                 properties={properties}
@@ -33,13 +40,6 @@ export function Home({ properties, realtors, tags, releases }) {
                 p="2rem 2rem 3rem 2rem"
                 backgroundColor="white"
             />
-
-            <PropertyTypes />
-
-            {
-                tags.length > 0 &&
-                <Localities tags={tags} />
-            }
 
             {
                 realtors.length > 0 &&
