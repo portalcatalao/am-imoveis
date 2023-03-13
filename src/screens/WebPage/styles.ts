@@ -3,12 +3,15 @@ import { GridLayout } from "../../styles/globals";
 
 export const Container = styled.div`
     min-height: 70vh;
-    margin-top: 80px;
-    padding: 2rem 0;
 `
 export const Content = styled(GridLayout)`
     display: flex;
     flex-direction: column;
+    padding: 2rem 0rem;
+
+    @media(max-width: 1320px) {
+        padding: 2rem 1rem;
+    }
 `
 export const Title = styled.h2`
     font-size: 1.5rem;
@@ -22,4 +25,8 @@ export const Subtitle = styled.p`
     color: ${({theme}) => theme.colors.gray_100};
     max-width: 70%;
     margin-bottom: 16px;
+
+    @media(width: 720px) {
+        max-width: 100%;
+    }
 `

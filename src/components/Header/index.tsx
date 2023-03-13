@@ -47,7 +47,6 @@ export function Header({ top }) {
                         </>
                     ))}
                     {/* <li><Link href={'/institucional'}>Institucional</Link></li> */}
-                    <li><Link href={'/servicos'}>Serviços</Link></li>
                     <li><Link href={'/contato'}>Contato</Link></li>
                 </Links>
                 <MenuMobile onClick={() => setOpen(!open)}>

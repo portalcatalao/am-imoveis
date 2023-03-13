@@ -1,6 +1,6 @@
 import { parseCookies, setCookie } from "nookies";
 import { createContext, useContext, useEffect, useState } from "react";
-import { ButtonWhatsapp } from "../components/ButtonWhatsapp";
+import { ButtonWhatsapp } from "../components/WhatsappButton";
 import { api } from "../services/api";
 import { IConfig, IMenu } from "../types/interfaces";
 

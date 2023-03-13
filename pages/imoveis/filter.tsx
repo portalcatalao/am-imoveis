@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import Listing from '../../src/screens/Listagem'
+import Listing from '../../src/screens/PropertySearch'
 import { api } from '../../src/services/api';
 
 export default function ListingPage({ filter }) {

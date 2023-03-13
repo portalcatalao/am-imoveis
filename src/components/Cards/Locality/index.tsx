@@ -6,11 +6,12 @@ interface Props {
     src?: string | StaticImageData,
     alt?: string,
     subtitle?: string;
+    link?: string;
 }
 
-export function CardLocality({ title, src, alt, subtitle, ...props }: Props) {
+export function CardLocality({ title, src, alt, subtitle, link, ...props }: Props) {
     return (
-        <Container>
+        <Container href={link}>
             <Header>
                 <Thumbnail>
                     <Image

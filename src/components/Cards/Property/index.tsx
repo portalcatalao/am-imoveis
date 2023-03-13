@@ -20,7 +20,7 @@ interface Props {
 
 export function CardProperty({ src, forRent, forSell, price, title, city, bed, bath, car, area, id }: Props) {
     return (
-        <Container href={`/imoveis/teste/${id}`}>
+        <Container href={`/imovel/${id}`}>
             <Thumbnail>
                 <Image src={src} alt={""} layout="fill" />
                 <Mask />

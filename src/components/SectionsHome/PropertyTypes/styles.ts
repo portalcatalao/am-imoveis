@@ -18,7 +18,7 @@ export const BackgroundSection = styled.div`
 `
 export const TypePropertyContent = styled.div`
     background-color: #fff;
-    border-radius: ${({ theme }) => theme.borders.main};
+    border-radius: ${({ theme }) => theme.borders.third};
     display: flex;
     justify-content: center;
     

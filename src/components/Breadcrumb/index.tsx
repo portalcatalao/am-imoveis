@@ -1,17 +1,26 @@
-import { GridLayout } from "../../styles/globals";
-import { Container } from "./styles";
+import Link from "next/link";
+import { Container, Content, Fixed } from "./styles";
 
 interface Props {
     title: string;
+    subtitle?: string;
 }
 
-export function HeaderPage({ title }: Props) {
+export function HeaderPage({ title, subtitle }: Props) {
     return (
         <Container>
-            <GridLayout p="2rem 0">
-                <p>Home / {title}</p>
+            <Content>
+                <Fixed>
+                    <Link href="/">Home</Link>
+                    {subtitle &&
+                        <>
+                            <span>/</span>
+                            <p>{subtitle}</p>
+                        </>}
+                    <span>/</span>
+                </Fixed>
                 <h1>{title}</h1>
-            </GridLayout>
+            </Content>
         </Container>
     )
 }

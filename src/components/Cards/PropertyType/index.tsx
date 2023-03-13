@@ -4,11 +4,12 @@ interface Props {
     icon: string;
     title: string;
     subtitle: string;
+    link?: string;
 }
 
-export function CardTypeProperty({ icon, subtitle, title }: Props) {
+export function CardTypeProperty({ icon, subtitle, title, link }: Props) {
     return (
-        <Container>
+        <Container href={link ? link : "#"}>
             <IconWrapper>
                 <Icon
                     name={icon}

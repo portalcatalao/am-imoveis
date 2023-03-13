@@ -22,23 +22,27 @@ export function PropertyTypes() {
                             icon="fa-casa"
                             title="Casa"
                             subtitle="Imóveis tradicionais que oferecem mais privacidade."
+                            link="/imoveis/filter?propertyType=casa"
                         />
                         <CardTypeProperty
                             icon="fa-apartamento"
                             title="Apartamento"
                             subtitle="Imóveis que oferecem praticidade e segurança."
+                            link="/imoveis/filter?propertyType=apartamento"
                         />
                     </div>
                     <div>
                         <CardTypeProperty
                             icon="fa-kitnet"
-                            title="Kitnet"
-                            subtitle="Imovéis que atendem suas necessidades básicas."
+                            title="Condomínio"
+                            subtitle="Imovéis que atendem suas necessidades."
+                            link="/imoveis/filter?propertyType=casa_condominio"
                         />
                         <CardTypeProperty
                             icon="fa-fazenda"
                             title="Fazenda"
                             subtitle="Imóveis que te proporcionam contato direto com a natureza."
+                            link="/imoveis/filter?propertyType=fazenda"
                         />
                     </div>
                 </TypePropertyContent>

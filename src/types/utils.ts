@@ -34,4 +34,14 @@ export const propertyType = [
         name: 'Chácara',
         enum: 'chacara'
     },
+    {
+        id: '8',
+        name: 'Comercial',
+        enum: 'comercial'
+    },
+    {
+        id: '9',
+        name: 'Galpão',
+        enum: 'galpao'
+    }
 ]

@@ -1,9 +1,9 @@
-import { BannerHome } from "../../components/SectionsHome/Banner2";
-import { Featured } from "../../components/SectionsHome/Featured";
+import { BannerHome } from "../../components/SectionsHome/Banner";
+import { Properties } from "../../components/SectionsHome/Properties";
 import { PropertyTypes } from "../../components/SectionsHome/PropertyTypes";
 import { Localities } from "../../components/SectionsHome/Localities";
 import { Brokers } from "../../components/SectionsHome/Brokers";
-import { News } from '../../components/SectionsHome/News';
+import { Releases } from '../../components/SectionsHome/Releases';
 
 export function Home({ properties, realtors, tags, releases }) {
     return (
@@ -12,15 +12,44 @@ export function Home({ properties, realtors, tags, releases }) {
                 title="Encontre o seu imóvel aqui!"
                 subtitle="Conte com os melhores imóveis para você escolher!"
             />
-            <Featured
+
+            <Properties
                 title="Imóveis em destaque"
                 properties={properties}
                 p="2rem 2rem 3rem 2rem"
+                backgroundColor="white"
             />
+
+            <Properties
+                title="Imóveis à venda"
+                properties={properties}
+                p="2rem 2rem 3rem 2rem"
+                backgroundColor="#f7f7f7"
+            />
+
+            <Properties
+                title="Imóveis para alugar"
+                properties={properties}
+                p="2rem 2rem 3rem 2rem"
+                backgroundColor="white"
+            />
+
             <PropertyTypes />
-            <Localities tags={tags}/>
-            <Brokers realtors={realtors} />
-            <News releases={releases}/>
+
+            {
+                tags.length > 0 &&
+                <Localities tags={tags} />
+            }
+
+            {
+                realtors.length > 0 &&
+                <Brokers realtors={realtors} />
+            }
+
+            {
+                releases.length > 0 &&
+                <Releases releases={releases} />
+            }
         </>
     )
 }
