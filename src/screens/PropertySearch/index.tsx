@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 import {
     Container, Breadcrumb, Content, Results, Properties,
-    Top, Right, Bot,
+    Top, Right, Bot, ButtonClear
 } from './styles'
 
 import { getUrl } from '../../helpers/functions';
@@ -16,11 +16,13 @@ import { maskPrice } from '../../helpers/mask';
 import { IProperty } from '../../types/interfaces';
 import { Pagination } from '../../components/Pagination';
 import { useFilter } from '../../contexts/FilterContext';
+import { IoClose } from 'react-icons/io5';
+import { useRouter } from 'next/router';
 
 
 export default function PropertySearch({ filter }) {
     const { fillFilter, results, total } = useFilter();
-    
+
     useEffect(() => {
         if (filter) fillFilter(filter);
     }, []);
@@ -34,14 +36,16 @@ export default function PropertySearch({ filter }) {
 
                 <Content>
                     <Filter />
-
                     <Results>
+                        <ButtonClear  href="/imoveis/filter?" passHref>
+                            Limpar filtros
+                        </ButtonClear>
                         <Top>
                             <h3>{total} imóveis encontrados</h3>
-                            <Right>
+                            {/* <Right>
                                 <span>Ordernar:</span>
                                 <InputSelect placeholder="Mais recentes" value={undefined} onChange={undefined} />
-                            </Right>
+                            </Right> */}
                         </Top>
 
                         <Properties>
@@ -63,7 +67,7 @@ export default function PropertySearch({ filter }) {
                         </Properties>
 
                         <Bot>
-                            <Pagination total={total} page={1} onChange={() => {}} />
+                            <Pagination total={total} page={1} onChange={() => { }} />
                         </Bot>
                     </Results>
                 </Content>

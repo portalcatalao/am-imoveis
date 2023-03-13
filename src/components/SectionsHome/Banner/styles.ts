@@ -56,7 +56,7 @@ export const TitleMain = styled.h1`
     color: #fff;
 
     @media (max-width: 720px) {
-        font-size: 36px;
+        display: none;
     }
 `
 export const Title = styled.h1<Props>`
@@ -128,6 +128,7 @@ export const Form = styled.form`
         }
     }
 `
+
 export const Type = styled.div`
     flex: 1;
     border: 1px solid #e0e0e0;

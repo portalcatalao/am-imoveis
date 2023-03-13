@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -7,7 +8,7 @@ export const Container = styled.div`
     background-color: #fafafa;
 
     @media(max-width: 720px) {
-        padding-top: 0;
+        padding-top: 2rem;
     }
 `
 export const Breadcrumb = styled.span`
@@ -33,6 +34,23 @@ export const Content = styled.div`
         grid-template-columns: 1fr;
     }
 `
+
+export const ButtonClear = styled(Link)`
+    display: flex;
+    border: 1px solid #ff6961;
+    color: #ff6961;
+    width: fit-content;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    align-items: center;
+
+    :hover {
+        background: #ff6961;
+        color:#fff;
+    }
+`
+
 export const Results = styled.div`
     h3 {
         font-size: 18px;

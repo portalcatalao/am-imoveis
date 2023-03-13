@@ -84,9 +84,11 @@ export const Info = styled.div`
 export const Data = styled.div`
     display: flex;
     flex-direction: column;
+    row-gap: 6px;
 `
 
 export const Social = styled.div`
     display: flex;
     flex-direction: column;
+    row-gap: 6px;
 `

@@ -44,6 +44,8 @@ export function Filter() {
                 </Search>
 
                 <Divisor></Divisor>
+
+
                 <Tabs>
                     <Tab active={adTypeActive === 0} onClick={() => setAdTypeActive(0)}>Comprar</Tab>
                     <Tab active={adTypeActive === 1} onClick={() => setAdTypeActive(1)}>Alugar</Tab>
