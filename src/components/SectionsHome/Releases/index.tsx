@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { getUrl } from "../../../helpers/functions";
 import { GridLayout, Section, Subtitle, Title } from "../../../styles/globals";
 import theme from "../../../styles/theme";
-import { CardNews } from "../../Cards/News";
+import { CardNews } from "../../Cards/Release";
 import { } from './styles'
 
 export function Releases({ releases }) {

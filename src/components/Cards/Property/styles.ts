@@ -3,12 +3,9 @@ import Link from 'next/link';
 
 export const Container = styled(Link)`
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 314.5px;
+    height: 318px;
     color: #fff;
-    border: 0.5px solid #ebebeb;
-    border-radius: ${({ theme }) => theme.borders.main};
-    background: ${({ theme }) => theme.colors.white};
     display: flex;
     
     @media(max-width: 720px) {
@@ -16,12 +13,12 @@ export const Container = styled(Link)`
     }
 
     img {
-        transition: transform .3s
+        transition: transform .2s
     }
 
     :hover {
         img {
-            transform: scale(1.08);
+            transform: scale(1.04);
         }
     }
 `

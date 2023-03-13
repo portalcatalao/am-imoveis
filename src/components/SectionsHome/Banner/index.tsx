@@ -1,8 +1,11 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useSelect } from "../../../hooks/useSelect";
-import { GridLayout } from "../../../styles/globals";
+import { useEffect } from "react";
 import { InputSelect } from "../../Forms/InputSelect";
+import { useFilter } from "../../../contexts/FilterContext";
+import { normalizeString } from "../../../helpers/functions";
+import { GridLayout } from "../../../styles/globals";
+
 import {
     Container, Background, ButtonSubmit, ContentBanner, Form,
     Input, Search, Subtitle, Tab, Tabs, TitleMain, Type, Text
@@ -10,9 +13,6 @@ import {
 
 import CaixaAqui from "../../../../public/images/caixa.svg"
 import BannerBackground from "../../../../public/images/banner-home2.jpg"
-import { useFilter } from "../../../contexts/FilterContext";
-import { useRouter } from "next/router";
-import { normalizeString } from "../../../helpers/functions";
 
 export function BannerHome({ title, subtitle }) {
     const { propertyType, adType, city, district } = useFilter();
@@ -49,6 +49,7 @@ export function BannerHome({ title, subtitle }) {
                                     <Tab active={adType.value?.id === option.id} onClick={() => adType.onChange(option)}>{option.name}</Tab>
                                 )}
                             </Tabs>
+
                             <Form onSubmit={e => e.preventDefault()}>
                                 <Type>
                                     <InputSelect
@@ -68,7 +69,6 @@ export function BannerHome({ title, subtitle }) {
                                         {...district}
                                     />
                                 </Type>
-                                {/* <Input placeholder="Pesquise por bairro, cidade ou código" /> */}
                                 <ButtonSubmit onClick={handleSubmit}>Buscar imóveis</ButtonSubmit>
                             </Form>
                         </Search>

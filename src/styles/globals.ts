@@ -30,13 +30,10 @@ export const GridLayout = styled.div<Props>`
     align-items: ${({ ai }) => ai ?? "flex-start"};
     justify-content: ${({ jc }) => jc ?? "flex-start"};
     gap: ${({ gap }) => gap ?? 0};
-
-    @media (max-width: 1320px) {
-        padding: 20px;
-    }
-
-    @media (max-width: 720px) {
-        padding: 20px 10px;
+    
+    @media (max-width: 1312px) {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 `
 export const Section = styled.section<Props>`

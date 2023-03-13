@@ -7,25 +7,25 @@ import { GridLayout, Section, Subtitle, Title } from '../../../styles/globals'
 import theme from '../../../styles/theme'
 import { IProperty } from '../../../types/interfaces';
 import { CardProperty } from '../../Cards/Property'
-import { LinkButton, TopCard } from './styles'
+import { Container, Content, LinkButton, TopCard } from './styles'
 
 interface Props {
     properties: IProperty[];
     title: string,
-    p: string,
+    p?: string,
     backgroundColor?: string
 }
 
 export function Properties({ properties, title, p, backgroundColor }: Props) {
     return (
-        <Section bg={backgroundColor} p={p}>
-            <GridLayout>
+        <Container>
+            <Content>
                 <TopCard>
                     <div>
                         <Title cl={theme.colors.gray_100} fz={"1.8rem"}>{title}</Title>
                         <Subtitle cl={theme.colors.gray_100} fz={"1rem"}>
                             Excelentes imóveis disponíveis para você conhecer
-                            <LinkButton href="/imoveis">Ver todos<FiChevronRight /></LinkButton>
+                            <LinkButton href="/imoveis/filter?">Ver todos<FiChevronRight /></LinkButton>
                         </Subtitle>
                     </div>
                 </TopCard>
@@ -54,7 +54,7 @@ export function Properties({ properties, title, p, backgroundColor }: Props) {
                         </SwiperSlide>
                     )}
                 </Swiper>
-            </GridLayout>
-        </Section>
+            </Content>
+        </Container>
     )
 }

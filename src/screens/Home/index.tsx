@@ -30,7 +30,6 @@ export function Home({ properties, realtors, tags, releases }) {
             <Properties
                 title="Imóveis à venda"
                 properties={properties}
-                p="2rem 2rem 3rem 2rem"
                 backgroundColor="#f7f7f7"
             />
 

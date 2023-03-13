@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import Link from 'next/link';
-import { Props } from "../../../styles/globals";
+import { GridLayout, Props } from "../../../styles/globals";
+
+export const Container = styled.div`
+    display: flex;
+`
+
+export const Content = styled(GridLayout)`
+    padding: 2rem 0;
+`
 
 export const TopCard = styled.div`
     position: relative;

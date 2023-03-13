@@ -352,9 +352,13 @@ interface ILinkButton {
     fill?: boolean
 }
 export const LinkButton = styled(Link) <ILinkButton>`
-    background: ${({ fill, theme }) => fill && theme.colors.primary}!important;
+    background: ${({ fill, theme }) => fill && theme.colors.dark}!important;
     color: ${({ fill, theme }) => fill && theme.colors.white}!important;
     border: ${({ fill, theme }) => fill && 'none'}!important;
+
+    :hover {
+        background: ${({ fill, theme }) => fill && theme.colors.primary}!important;
+    }
 `
 export const TitleRelacionados = styled.h2`
     width: 100%;

@@ -34,6 +34,16 @@ export const propertyTypeData = [
         name: 'Chácara',
         enum: 'chacara'
     },
+    {
+        id: '8',
+        name: 'Comercial',
+        enum: 'comercial'
+    },
+    {
+        id: '9',
+        name: 'Galpão',
+        enum: 'galpao'
+    }
 ]
 export const locationTypeData = [
     {
@@ -144,12 +154,12 @@ export const propertyRelationshipData = [
 export const adTypeData = [
     {
         id: '1',
-        name: 'Aluguel',
-        enum: 'aluguel'
+        name: 'Venda',
+        enum: 'venda'
     },
     {
         id: '2',
-        name: 'Venda',
-        enum: 'venda'
-    }
+        name: 'Aluguel',
+        enum: 'aluguel'
+    },
 ]

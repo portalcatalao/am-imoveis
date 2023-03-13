@@ -129,9 +129,9 @@ export const Form = styled.form`
     }
 `
 export const Type = styled.div`
-    //width: 180px;
     flex: 1;
-    border-right: 1px solid #d3d3d3;
+    border: 1px solid #e0e0e0;
+    border-radius: ${({ theme }) => theme.borders.main};
     
     button {
         border: 0!important;
